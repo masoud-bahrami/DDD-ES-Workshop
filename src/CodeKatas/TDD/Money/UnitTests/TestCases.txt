@@ -1,0 +1,31 @@
+﻿
+5$ * 2 = 10$
+dollar side-effects
+equals
+make amount private
+5CHF * 2 = 10CHF
+equality duplication
+equal for diffrent currency
+times duplication
+currency
+remove refrence to Dollar in test
+Dollar/Franc duplication
+
+----------------------------------
+
+5$ + 5$
+5$ + 10CHF = 10$ (CHF:Dollar 2:1)
+(5$ * + 10CHF) * 2 = 20$ (CHF:Dollar 2:1)
+
+Wallet
+Expression
+Bank
+
+Reduce
+
+plus return expression
+money should inherit from expression
+
+check null in equality
+check object in equality
+check hashcode

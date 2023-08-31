@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{B2CB052A-C404-4DD8-8BE2-69A3DA703BED}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DriverSide", "DriverSide", "{E8BB1591-1194-4BBB-B173-ABB3DA13C6FD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DrivenSide", "DrivenSide", "{F0C3097C-2A7F-4AC4-8AA1-47F28C90D629}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeKata.AcceptanceTests", "DriverSide\AcceptanceTests\CodeKata.AcceptanceTests.csproj", "{7BFF5348-E458-44A2-BDAE-BA7A9B0ED05A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeKata.PortsAndAdapters.DrivenSide", "DrivenSide\CodeKata.PortsAndAdapters.DrivenSide.csproj", "{6AED084E-7F1B-433F-B672-5EA655A77B11}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeKata.PortsAndAdapters.Application", "Application\CodeKata.PortsAndAdapters.Application.csproj", "{439231F5-74EB-422A-AFC4-C57DB2623A07}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7BFF5348-E458-44A2-BDAE-BA7A9B0ED05A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BFF5348-E458-44A2-BDAE-BA7A9B0ED05A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BFF5348-E458-44A2-BDAE-BA7A9B0ED05A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BFF5348-E458-44A2-BDAE-BA7A9B0ED05A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AED084E-7F1B-433F-B672-5EA655A77B11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AED084E-7F1B-433F-B672-5EA655A77B11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AED084E-7F1B-433F-B672-5EA655A77B11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AED084E-7F1B-433F-B672-5EA655A77B11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{439231F5-74EB-422A-AFC4-C57DB2623A07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{439231F5-74EB-422A-AFC4-C57DB2623A07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{439231F5-74EB-422A-AFC4-C57DB2623A07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{439231F5-74EB-422A-AFC4-C57DB2623A07}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7BFF5348-E458-44A2-BDAE-BA7A9B0ED05A} = {E8BB1591-1194-4BBB-B173-ABB3DA13C6FD}
+		{6AED084E-7F1B-433F-B672-5EA655A77B11} = {F0C3097C-2A7F-4AC4-8AA1-47F28C90D629}
+		{439231F5-74EB-422A-AFC4-C57DB2623A07} = {B2CB052A-C404-4DD8-8BE2-69A3DA703BED}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {13C4D955-2860-4808-89B4-6C0BB8F5912B}
+	EndGlobalSection
+EndGlobal

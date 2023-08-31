@@ -1,0 +1,29 @@
+﻿
+											
+									Domain-Driven Design and EventSourcing Course
+
+									TDD code kata 
+											=> Money Investment
+
+
+									Exchnage Rate: Franc to Dollar =>  2:1
+
+									=======================================
+
+									| INVESTOR  | SHARES | EXCHANGE | Total |
+									-----------------------------------------
+									| Microsoft | 1500   | Dollar   |       |
+									| Microsoft | 3000   | Franc    |       |
+									| Google    | 5000   | Dollar   |       |
+									| Yahoo     | 20000  | Franc    |       |
+									-----------------------------------------
+									|  TOTAL    |			   18000 Dollar |
+
+
+
+											
+											
+											
+											
+											
+										   http://DomainDrivenDesign.ir
