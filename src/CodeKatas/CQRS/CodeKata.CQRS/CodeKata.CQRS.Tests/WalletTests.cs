@@ -2,11 +2,6 @@
 
 public class WalletTests
 {
-
-    // CQS
-    // Side-effect
-    // Supple-Design
-
     [Fact]
     public void testWallet()
     {
@@ -25,16 +20,11 @@ public class WalletTests
         Assert(martinFowler, martinFowlerWallet);
         Assert(kentBeck, kentBeckWallet);
         Assert(ericEvans, ericEvansWallet);
-
-
-
-
-        // side-effect free
+        
         ericEvansWallet.Deposit(new Money(500));
 
         Xunit.Assert.Equal(1000, ericEvansWallet.Balance.Amount);
-
-
+        
         Xunit.Assert.Equal(initialBalanceAmount, martinFowlerWallet.Balance.Amount);
         Xunit.Assert.Equal(initialBalanceAmount, kentBeckWallet.Balance.Amount);
 
@@ -57,32 +47,18 @@ public class Wallet
         Owner = owner;
     }
     
-    // CQS
-
-    // command
-    // design-by contract
     public void Deposit(Money money)
     {
-        // side-effect 
-        // Aliasing
-
-        Balance = Balance.Add(money);
-
-       // Balance.Amount += money.Amount;
+       Balance.Amount += money.Amount;
     }
 }
 
 
-// Value object - Whole-Object
 public class Money
 {
-    public int Amount { get;private set; }
-    public string  currency{ get;private set; }
+    public int Amount { get;set; }
     public Money(int amount)
     {
         Amount = amount;
     }
-
-    public Money Add(Money addend) 
-        => new Money(Amount + addend.Amount);
 }
