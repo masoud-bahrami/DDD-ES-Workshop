@@ -8,7 +8,7 @@ namespace DDD.SupleDesign.Tests
     {
 
 
-
+        
 
         [Fact]
         public void testPreCondition()
@@ -78,7 +78,7 @@ namespace DDD.SupleDesign.Tests
             account.Deposit(depositAmount);
 
             // Assert
-            Assert.Equal(initialBalance + depositAmount, account.Balance);
+            Assert.Equal(initialBalance + depositAmount, account.Balance());
         }
 
         [Fact]

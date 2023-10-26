@@ -4,6 +4,8 @@ public abstract class Formula
 {
 
     public abstract int Reduce();
+    public abstract Formula Add(Formula add);
+    public abstract Formula Divide(Formula add);
 }
 
 public class AddFormula : Formula

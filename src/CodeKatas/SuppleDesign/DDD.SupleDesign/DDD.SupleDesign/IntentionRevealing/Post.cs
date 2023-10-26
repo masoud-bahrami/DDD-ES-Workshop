@@ -1,11 +1,11 @@
 ﻿public class Post
 {
-    private String PostId;
-    private String auth;
-    private String content;
+    private string PostId;
+    private string auth;
+    private string content;
     private int lks;
 
-    public Post(String postId, String author, String content)
+    public Post(string postId, string author, string content)
     {
         PostId = postId;
         auth = author;
@@ -17,7 +17,7 @@
     {
     }
 
-    public String getAuthor()
+    public string getAuthor()
     {
         return auth;
     }
