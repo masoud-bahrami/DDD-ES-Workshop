@@ -1,8 +1,6 @@
-using System.Net.NetworkInformation;
-using BankAccount.AcceptaceTests.Drivers;
-using BankAccount.AcceptaceTests.Drivers.AccountManager;
+using BankAccount.AcceptanceTests.Drivers.AccountManager;
 
-namespace BankAccount.AcceptaceTests.StepDefinitions
+namespace BankAccount.AcceptanceTests.StepDefinitions
 {
     [Binding]
     public class AccountManagerStepDefinitions
@@ -15,13 +13,13 @@ namespace BankAccount.AcceptaceTests.StepDefinitions
         }
 
         [Given(@"Masoud as a customer")]
-        public void GivenMasoudAsACustomer()
+        public void GivenPersonAsACustomer()
         {
             // TODO
         }
 
         [Given(@"There is no any bank account for Masoud")]
-        public void GivenThereIsNoAnyBankAccountForMasoud()
+        public void GivenThereIsNoAnyBankAccountFor()
         {
 
         }
@@ -33,7 +31,7 @@ namespace BankAccount.AcceptaceTests.StepDefinitions
         }
 
         [Then(@"A new bank account will be opened for (.*) with (.*) toman balance")]
-        public async Task ThenANewBankAccountWillBeOpenedForMasoudWithTomanBalance(string owner, decimal expectedAmount)
+        public async Task ThenANewBankAccountWillBeOpenedForCustomerWithTomanBalance(string owner, decimal expectedAmount)
         {
             await _driver.AssertThatOwnerHasAnAccountWithInitialBalance(owner, expectedAmount);
         }

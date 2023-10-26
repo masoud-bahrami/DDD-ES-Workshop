@@ -1,7 +1,7 @@
 using Bank.Account.API;
 using Microsoft.AspNetCore.Mvc.Testing;
 
-namespace BankAccount.AcceptaceTests.Drivers.AccountManager;
+namespace BankAccount.AcceptanceTests.Drivers.AccountManager;
 
 public class BankAccountApiDriver : IBankAccountDriver
 {

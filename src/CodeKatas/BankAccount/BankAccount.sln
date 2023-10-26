@@ -9,7 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{B575531D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bank.Account.API", "src\API\Bank.Account.API.csproj", "{1686470E-FDD7-421F-9EFA-F0B59D72A16F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BankAccount.AcceptaceTests", "AcceptanceTests\BankAccount.AcceptaceTests.csproj", "{EA34E5E4-E048-49C7-8851-A64DBDCDA221}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BankAccount.AcceptanceTests", "AcceptanceTests\BankAccount.AcceptanceTests.csproj", "{EA34E5E4-E048-49C7-8851-A64DBDCDA221}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

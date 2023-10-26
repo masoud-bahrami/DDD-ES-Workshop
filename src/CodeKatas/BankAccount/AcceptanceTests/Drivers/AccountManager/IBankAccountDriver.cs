@@ -1,4 +1,4 @@
-namespace BankAccount.AcceptaceTests.Drivers.AccountManager;
+namespace BankAccount.AcceptanceTests.Drivers.AccountManager;
 
 internal interface IBankAccountDriver
 {
