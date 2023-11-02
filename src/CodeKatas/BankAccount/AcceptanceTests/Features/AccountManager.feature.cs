@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace BankAccount.AcceptaceTests.Features
+namespace BankAccount.AcceptanceTests.Features
 {
     using TechTalk.SpecFlow;
     using System;
@@ -31,7 +31,7 @@ namespace BankAccount.AcceptaceTests.Features
 #line 1 "AccountManager.feature"
 #line hidden
         
-        public AccountManagerFeature(AccountManagerFeature.FixtureData fixtureData, BankAccount_AcceptaceTests_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public AccountManagerFeature(AccountManagerFeature.FixtureData fixtureData, BankAccount_AcceptanceTests_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
             this.TestInitialize();

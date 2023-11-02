@@ -1,3 +1,5 @@
+using BankAccount.ApplicationServices;
+using BankAccount.ApplicationServices.Dispatcher;
 
 namespace Bank.Account.API
 {
@@ -13,6 +15,20 @@ namespace Bank.Account.API
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+
+            builder.Services.AddScoped<ICommandDispatcher, CommandDispatcher>();
+
+            builder.Services.AddScoped<IWantToHandleCommand<OpenBankAccountCommand>, OpenBankAccountCommandHandler>();
+
+
+
+
+
+
+
+
+
 
             var app = builder.Build();
 

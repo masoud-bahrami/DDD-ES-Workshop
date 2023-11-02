@@ -22,8 +22,6 @@ public class BankAccountApiDriver : IBankAccountDriver
     }
     public async Task OpenBank(string owner, decimal initialAmount)
     {
-
-        
         var httpResponseMessage = await _httpClient.PostAsync($"api/accounts/{owner}/open/{initialAmount}", null);
 
         await EnsureSuccess(httpResponseMessage);
