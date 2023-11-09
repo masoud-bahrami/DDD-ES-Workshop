@@ -1,5 +1,8 @@
 using BankAccount.ApplicationServices;
 using BankAccount.ApplicationServices.Dispatcher;
+using BankAccount.Domain;
+using BankAccount.Domain.Services;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Bank.Account.API
 {
@@ -20,11 +23,10 @@ namespace Bank.Account.API
             builder.Services.AddScoped<ICommandDispatcher, CommandDispatcher>();
 
             builder.Services.AddScoped<IWantToHandleCommand<OpenBankAccountCommand>, OpenBankAccountCommandHandler>();
+            
+            builder.Services.AddTransient<IAccountDomainService, AccountDomainService>();
 
-
-
-
-
+            
 
 
 

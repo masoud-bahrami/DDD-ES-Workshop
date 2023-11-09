@@ -15,7 +15,7 @@ public class FakeCommandHandler : IWantToHandleCommand<FakeCommand>
         Assert.Equal(true, _isCalled);
     }
 
-    public override Task Handle<T>(T command)
+    public override Task Handle(FakeCommand command)
     {
         _isCalled = true;
         return Task.CompletedTask;
