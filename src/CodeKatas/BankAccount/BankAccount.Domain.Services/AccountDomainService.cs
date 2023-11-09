@@ -9,6 +9,7 @@ public class AccountDomainService : IAccountDomainService
     {
         _initialAmountThreshold = initialAmountThreshold;
     }
+
     public void GuardAgainstInitialAmount(decimal initialAmount)
     {
         if (initialAmount < _initialAmountThreshold)

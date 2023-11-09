@@ -1,22 +1,25 @@
+using BankAccount.Domain.NewFolder;
+
 namespace BankAccount.Domain;
 
-public class Account
+public class Account : AggregateRoot<AccountId>
 {
-    public string AccountId { get; }
     public decimal Amount { get; set; }
-    
-    public Account(string accountId, decimal initialAmount, IAccountDomainService accountDomainService)
+
+    private Account() : base(null)
+    {
+    }
+
+    public Account(string accountId,
+        decimal initialAmount,
+        IAccountDomainService accountDomainService)
+                : base(new AccountId(accountId))
     {
         accountDomainService.GuardAgainstInitialAmount(initialAmount);
-        
-        AccountId = accountId;
+
         Amount = initialAmount;
     }
 
-    public override bool Equals(object? obj)
-    {
-        var that = (Account)obj;
-        return that.AccountId == that.AccountId;
-    }
-}
 
+    public AccountMemento TakeMemento() => new(base.Id.Id, Amount);
+}

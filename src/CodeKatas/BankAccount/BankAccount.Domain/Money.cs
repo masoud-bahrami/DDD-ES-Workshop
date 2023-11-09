@@ -1,21 +1,20 @@
 namespace BankAccount.Domain;
 
-public class Money
+public class Money : ValueObject<Money>
 {
-    public decimal Amount { get; set; }
-    public string Curency { get; set; }
+    public decimal Amount { get; init; }
+    public string Curency { get; init; }
+
     public static Money Rial(decimal amount)
-            => new Money
+            => new()
             {
                 Amount = amount,
                 Curency = "Rial"
             };
 
-    public override bool Equals(object? obj)
+    protected override IEnumerable<object> GetEqualityComponents()
     {
-        var that = (Money)obj;
-
-        return this.Amount == that.Amount
-               && that.Curency == that.Curency;
+        yield return Amount;
+        yield return Curency;
     }
 }

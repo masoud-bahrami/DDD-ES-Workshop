@@ -1,6 +1,7 @@
 ﻿
 using BankAccount.ApplicationServices;
 using BankAccount.ApplicationServices.Dispatcher;
+using BankAccount.ApplicationServices.Query;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Bank.Account.API.Controllers
@@ -10,11 +11,12 @@ namespace Bank.Account.API.Controllers
     public class AccountsController : ControllerBase
     {
         private readonly ICommandDispatcher _dispatcher;
+        private readonly IQueryDispatcher _queryDispatcher;
 
-
-        public AccountsController(ICommandDispatcher dispatcher)
+        public AccountsController(ICommandDispatcher dispatcher, IQueryDispatcher queryDispathcer)
         {
             _dispatcher = dispatcher;
+            _queryDispatcher = queryDispathcer;
         }
 
 
@@ -30,9 +32,7 @@ namespace Bank.Account.API.Controllers
         }
 
         [HttpGet("{owner}/Balance")]
-        public async Task<IActionResult> Balance(string owner)
-        {
-            return Ok(10000);
-        }
+        public async Task<IActionResult> Balance(string owner) 
+            => Ok(await _queryDispatcher.RunQuery<GetAccountBalanceQuery, decimal>(new GetAccountBalanceQuery(owner)));
     }
 }
