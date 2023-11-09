@@ -27,7 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BankAccount.ApplicationServices.Query\BankAccount.ApplicationServices.Query.csproj" />
+    <ProjectReference Include="..\Query\BankAccount.ApplicationServices.Query.csproj" />
   </ItemGroup>
 
 </Project>

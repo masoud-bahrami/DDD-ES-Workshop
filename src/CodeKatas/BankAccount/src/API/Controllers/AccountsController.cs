@@ -19,7 +19,7 @@ namespace Bank.Account.API.Controllers
             _queryDispatcher = queryDispathcer;
         }
 
-
+        // command
         [HttpPost("{owner}/open/{initialAmount}")]
         public async Task<IActionResult> Open(string owner, decimal initialAmount)
         {

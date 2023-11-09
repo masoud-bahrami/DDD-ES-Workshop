@@ -21,8 +21,10 @@
 	</ItemGroup>
 	<ItemGroup>
 		<ProjectReference Include="..\..\BankAccount.ApplicationServices.Query\BankAccount.ApplicationServices.Query.csproj" />
-		<ProjectReference Include="..\..\BankAccount.Domain.Services\BankAccount.Domain.Services.csproj" />
-		<ProjectReference Include="..\BankAccount.ApplicationServices\BankAccount.ApplicationServices.csproj" />
+		<ProjectReference Include="..\Account\ApplicationServices\ApplicationServices\BankAccount.ApplicationServices.csproj" />
+		<ProjectReference Include="..\Account\Domain\Domain.Services\BankAccount.Domain.Services.csproj" />
+		<ProjectReference Include="..\Infrastructure\BankAccount.Infrastructure.csproj" />
+		<ProjectReference Include="..\Reporting\Query\BankAccount.ApplicationServices.Query.csproj" />
 	</ItemGroup>
 
 </Project>

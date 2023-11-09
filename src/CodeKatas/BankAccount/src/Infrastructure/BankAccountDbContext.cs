@@ -1,4 +1,5 @@
-﻿using BankAccount.Domain;
+﻿
+using BankAccount.Domain;
 using Microsoft.EntityFrameworkCore;
 
 namespace BankAccount.Infrastructure;

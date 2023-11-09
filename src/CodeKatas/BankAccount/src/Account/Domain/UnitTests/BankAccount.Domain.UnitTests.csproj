@@ -22,8 +22,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\BankAccount.Domain.Services\BankAccount.Domain.Services.csproj" />
-    <ProjectReference Include="..\..\BankAccount.Domain\BankAccount.Domain.csproj" />
+    <ProjectReference Include="..\Domain.Services\BankAccount.Domain.Services.csproj" />
+    <ProjectReference Include="..\Domain\BankAccount.Domain.csproj" />
   </ItemGroup>
 
 </Project>
