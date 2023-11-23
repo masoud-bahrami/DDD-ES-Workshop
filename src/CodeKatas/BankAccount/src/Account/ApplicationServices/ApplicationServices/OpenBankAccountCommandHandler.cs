@@ -1,5 +1,7 @@
-﻿using BankAccount.ApplicationServices.Dispatcher;
-using BankAccount.Domain;
+﻿using BankAccount.Domain.Accounts;
+using BankAccount.Domain.Accounts.Repository;
+using BankAccount.Domain.Accounts.Services;
+using Zero.Dispatcher.Command;
 
 namespace BankAccount.ApplicationServices;
 

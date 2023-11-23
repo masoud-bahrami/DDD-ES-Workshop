@@ -1,4 +1,4 @@
-﻿namespace BankAccount.ApplicationServices.Query;
+﻿namespace Zero.Dispatcher.Query;
 
 public abstract class IWantToHandleQuery<TQuery, TResult>
             where TQuery : IQuery

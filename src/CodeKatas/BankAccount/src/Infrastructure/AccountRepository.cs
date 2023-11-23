@@ -1,4 +1,5 @@
-﻿using BankAccount.Domain;
+﻿using BankAccount.Domain.Accounts;
+using BankAccount.Domain.Accounts.Repository;
 
 namespace BankAccount.Infrastructure;
 

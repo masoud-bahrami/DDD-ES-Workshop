@@ -5,7 +5,7 @@ namespace BankAccount.AcceptanceTests.StepDefinitions
     [Binding]
     public class AccountManagerStepDefinitions
     {
-        private IBankAccountDriver _driver;
+        private readonly IBankAccountDriver _driver;
 
         public AccountManagerStepDefinitions()
         {

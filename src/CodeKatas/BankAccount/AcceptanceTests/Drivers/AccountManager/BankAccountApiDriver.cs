@@ -6,7 +6,7 @@ namespace BankAccount.AcceptanceTests.Drivers.AccountManager;
 
 public class BankAccountApiDriver : IBankAccountDriver
 {
-    readonly HttpClient _httpClient;
+    private readonly HttpClient _httpClient;
 
     public BankAccountApiDriver()
     {

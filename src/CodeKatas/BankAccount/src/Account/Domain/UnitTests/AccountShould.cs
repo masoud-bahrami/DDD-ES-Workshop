@@ -1,5 +1,5 @@
-
-
+using BankAccount.Domain.Accounts;
+using BankAccount.Domain.Accounts.Services;
 using BankAccount.Domain.Services;
 
 namespace BankAccount.Domain.UnitTests
@@ -32,9 +32,9 @@ namespace BankAccount.Domain.UnitTests
         public void Money()
         {
             decimal initialAmount = 10000;
-            Money money = Domain.Money.Rial(initialAmount);
+            Money money = Accounts.Money.Rial(initialAmount);
 
-            Assert.Equal(Domain.Money.Rial(10000), money);
+            Assert.Equal(Accounts.Money.Rial(10000), money);
         }
 
         [Fact]

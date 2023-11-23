@@ -1,4 +1,4 @@
-namespace BankAccount.ApplicationServices.Dispatcher;
+namespace Zero.Dispatcher.Command;
 
 public class HandlerNotFoundOrRegisteredException<T> : Exception
 where T : IsACommand

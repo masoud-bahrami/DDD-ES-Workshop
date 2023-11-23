@@ -1,4 +1,4 @@
-﻿namespace BankAccount.Domain.NewFolder;
+﻿namespace Zero.Domain;
 
 public class AggregateRoot<TId> : Entity<TId> where TId : Identity
 {

@@ -1,8 +1,9 @@
 ﻿
 using BankAccount.ApplicationServices;
-using BankAccount.ApplicationServices.Dispatcher;
 using BankAccount.ApplicationServices.Query;
 using Microsoft.AspNetCore.Mvc;
+using Zero.Dispatcher.Command;
+using Zero.Dispatcher.Query;
 
 namespace Bank.Account.API.Controllers
 {
@@ -18,8 +19,7 @@ namespace Bank.Account.API.Controllers
             _dispatcher = dispatcher;
             _queryDispatcher = queryDispathcer;
         }
-
-        // command
+        
         [HttpPost("{owner}/open/{initialAmount}")]
         public async Task<IActionResult> Open(string owner, decimal initialAmount)
         {

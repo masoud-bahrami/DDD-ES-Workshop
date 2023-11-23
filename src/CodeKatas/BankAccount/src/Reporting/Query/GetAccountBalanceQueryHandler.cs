@@ -1,5 +1,6 @@
 ﻿using BankAccount.Infrastructure;
 using Microsoft.EntityFrameworkCore;
+using Zero.Dispatcher.Query;
 
 namespace BankAccount.ApplicationServices.Query;
 

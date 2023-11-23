@@ -1,4 +1,4 @@
-﻿namespace BankAccount.Domain;
+﻿namespace BankAccount.Domain.Accounts.Memento;
 
 public class AccountMemento
 {

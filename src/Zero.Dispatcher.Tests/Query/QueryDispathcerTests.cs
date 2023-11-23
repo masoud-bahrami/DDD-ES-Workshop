@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using Zero.Dispatcher.Query;
 
-namespace BankAccount.ApplicationServices.Query.Tests;
+namespace Zero.Dispatcher.Tests.Query;
 
 public class QueryDispatcherTests
 {

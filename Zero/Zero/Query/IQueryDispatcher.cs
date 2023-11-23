@@ -1,4 +1,4 @@
-﻿namespace BankAccount.ApplicationServices.Query;
+﻿namespace Zero.Dispatcher.Query;
 
 public interface IQueryDispatcher
 {

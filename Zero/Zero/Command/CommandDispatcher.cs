@@ -1,4 +1,4 @@
-namespace BankAccount.ApplicationServices.Dispatcher;
+namespace Zero.Dispatcher.Command;
 
 public class CommandDispatcher : ICommandDispatcher
 {

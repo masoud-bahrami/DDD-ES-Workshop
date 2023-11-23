@@ -1,4 +1,6 @@
-﻿namespace BankAccount.ApplicationServices.Query;
+﻿using Zero.Dispatcher.Query;
+
+namespace BankAccount.ApplicationServices.Query;
 
 public class GetAccountBalanceQuery : IQuery
 {

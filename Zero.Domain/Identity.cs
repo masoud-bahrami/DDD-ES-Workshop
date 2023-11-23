@@ -1,4 +1,4 @@
-namespace BankAccount.Domain.NewFolder;
+namespace Zero.Domain;
 
 public abstract class Identity<T> : ValueObject<Identity<T>>, Identity
 {

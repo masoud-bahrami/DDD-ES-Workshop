@@ -1,4 +1,6 @@
-﻿public abstract class ValueObject<T>
+﻿namespace Zero.Domain;
+
+public abstract class ValueObject<T>
     where T : ValueObject<T>
 {
     public override bool Equals(object obj)

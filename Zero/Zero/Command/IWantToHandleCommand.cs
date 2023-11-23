@@ -1,4 +1,4 @@
-namespace BankAccount.ApplicationServices.Dispatcher;
+namespace Zero.Dispatcher.Command;
 
 public abstract class IWantToHandleCommand<T>
     where T : IsACommand

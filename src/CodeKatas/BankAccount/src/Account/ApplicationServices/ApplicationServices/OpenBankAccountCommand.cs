@@ -1,4 +1,4 @@
-﻿using BankAccount.ApplicationServices.Dispatcher;
+﻿using Zero.Dispatcher.Command;
 
 namespace BankAccount.ApplicationServices;
 

@@ -1,4 +1,4 @@
-namespace BankAccount.Domain;
+namespace BankAccount.Domain.Accounts.Services;
 
 public interface IAccountDomainService
 {

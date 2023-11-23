@@ -1,3 +1,5 @@
+using BankAccount.Domain.Accounts.Services;
+
 namespace BankAccount.Domain.Services;
 
 public class AccountDomainService : IAccountDomainService

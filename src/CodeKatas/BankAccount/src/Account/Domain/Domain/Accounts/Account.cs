@@ -1,6 +1,8 @@
-using BankAccount.Domain.NewFolder;
+using BankAccount.Domain.Accounts.Memento;
+using BankAccount.Domain.Accounts.Services;
+using Zero.Domain;
 
-namespace BankAccount.Domain;
+namespace BankAccount.Domain.Accounts;
 
 public class Account : AggregateRoot<AccountId>
 {

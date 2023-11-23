@@ -1,6 +1,6 @@
-using BankAccount.Domain.NewFolder;
+using Zero.Domain;
 
-namespace BankAccount.Domain;
+namespace BankAccount.Domain.Accounts;
 
 public class AccountId : Identity<string>
 {

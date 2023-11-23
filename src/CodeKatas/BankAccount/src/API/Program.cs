@@ -1,12 +1,13 @@
-using Bank.Account.API.Controllers;
 using BankAccount.ApplicationServices;
-using BankAccount.ApplicationServices.Dispatcher;
 using BankAccount.ApplicationServices.Query;
-using BankAccount.Domain;
+using BankAccount.Domain.Accounts.Repository;
+using BankAccount.Domain.Accounts.Services;
 using BankAccount.Domain.Services;
 using BankAccount.Infrastructure;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
+using Zero.Dispatcher.Command;
+using Zero.Dispatcher.Query;
 
 namespace Bank.Account.API
 {

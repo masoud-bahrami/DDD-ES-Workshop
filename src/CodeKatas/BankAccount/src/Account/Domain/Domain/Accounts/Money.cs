@@ -1,4 +1,6 @@
-namespace BankAccount.Domain;
+using Zero.Domain;
+
+namespace BankAccount.Domain.Accounts;
 
 public class Money : ValueObject<Money>
 {

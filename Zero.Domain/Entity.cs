@@ -1,4 +1,4 @@
-﻿using BankAccount.Domain.NewFolder;
+﻿namespace Zero.Domain;
 
 public abstract class Entity<TId> where TId : Identity{
 
