@@ -6,22 +6,29 @@ namespace BankAccount.Domain.Accounts;
 
 public class Account : AggregateRoot<AccountId>
 {
-    public decimal Amount { get; set; }
+    public Transactions Transactions { get; private set; } = Transactions.Init();
 
     private Account() : base(null)
     {
     }
 
-    public Account(string accountId,
+    public Account(AccountId accountId,
         decimal initialAmount,
         IAccountDomainService accountDomainService)
-                : base(new AccountId(accountId))
+                : base(accountId)
     {
         accountDomainService.GuardAgainstInitialAmount(initialAmount);
 
-        Amount = initialAmount;
+        var transaction = OpeningAccountTransaction.New(Money.Rial(initialAmount));
+
+        Transactions.Add(transaction);
     }
 
 
-    public AccountMemento TakeMemento() => new(base.Id.Id, Amount);
+    public AccountMemento TakeMemento() => new(base.Id.Id, Transactions);
+
+    public Money Balance()
+    {
+        return Transactions.Balance();
+    }
 }

@@ -2,12 +2,15 @@
 
 public class AccountMemento
 {
-    public AccountMemento(string id, decimal amount)
+    public AccountMemento(string id, Transactions transactions)
     {
         Id = id;
-        Amount = amount;
+        Transactions = transactions;
     }
 
     public string Id { get; set; }
-    public decimal Amount { get; set; }
+    public Transactions Transactions { get;private set; }
+
+    public decimal Balance() => Transactions.Balance().Amount;
+
 }

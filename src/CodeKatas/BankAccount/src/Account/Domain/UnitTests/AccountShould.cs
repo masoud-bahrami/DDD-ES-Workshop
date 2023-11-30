@@ -14,7 +14,7 @@ namespace BankAccount.Domain.UnitTests
 
             var account = CreateAccount(initialAmount);
 
-            Assert.Equal(10000, account.Amount);
+            Assert.Equal(Money.Rial(10000), account.Balance());
         }
 
 
@@ -26,15 +26,6 @@ namespace BankAccount.Domain.UnitTests
             Action action = () => CreateAccount(initialBalance);
 
             Assert.Throws<Exception>(action);
-        }
-
-        [Fact]
-        public void Money()
-        {
-            decimal initialAmount = 10000;
-            Money money = Accounts.Money.Rial(initialAmount);
-
-            Assert.Equal(Accounts.Money.Rial(10000), money);
         }
 
         [Fact]
@@ -53,7 +44,7 @@ namespace BankAccount.Domain.UnitTests
         {
             IAccountDomainService accountDomainService = new AccountDomainService(10000);
 
-            return new Account(accountId, initialAmount , accountDomainService);
+            return new Account(AccountId.New(accountId), initialAmount, accountDomainService);
         }
 
         private static Account CreateAccount(decimal initialAmount)

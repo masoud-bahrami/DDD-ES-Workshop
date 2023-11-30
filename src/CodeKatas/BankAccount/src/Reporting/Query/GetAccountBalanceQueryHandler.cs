@@ -21,7 +21,7 @@ public class GetAccountBalanceQueryHandler : IWantToHandleQuery<GetAccountBalanc
         if (account is null)
             throw new AccountNotFoundException();
 
-        return account.Amount;
+        return account.Balance();
     }
 }
 

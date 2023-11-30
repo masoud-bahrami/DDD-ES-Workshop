@@ -1,5 +1,6 @@
 using BankAccount.ApplicationServices;
 using BankAccount.ApplicationServices.Query;
+using BankAccount.BankFees;
 using BankAccount.Domain.Accounts.Repository;
 using BankAccount.Domain.Accounts.Services;
 using BankAccount.Domain.Services;
@@ -19,7 +20,9 @@ namespace Bank.Account.API
 
             // Add services to the container.
 
-            builder.Services.AddControllers();
+            builder.Services.AddControllers()
+                .AddNewtonsoftJson();
+
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
@@ -30,7 +33,7 @@ namespace Bank.Account.API
             // db context(s)
             builder.Services.AddSingleton<BankAccountDbContext>();
 
-            builder.Services.AddSingleton<DbContextOptions<BankAccountDbContext>>(
+            builder.Services.AddSingleton(
                 sp =>
                 {
                     var connection = new SqliteConnection("Data Source=:memory:");
@@ -48,6 +51,10 @@ namespace Bank.Account.API
             builder.Services.AddScoped<IWantToHandleCommand<OpenBankAccountCommand>, OpenBankAccountCommandHandler>();
 
             builder.Services.AddTransient<IAccountDomainService, AccountDomainService>(sp => new AccountDomainService(10000));
+            builder.Services.AddTransient<IAccountIdGeneratorDomainService, AccountIdGeneratorDomainService>();
+            
+            
+            builder.Services.AddTransient<IBankFeesServices, BankFeesServices>();
 
 
             // register repositories

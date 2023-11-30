@@ -6,10 +6,13 @@ namespace BankAccount.AcceptanceTests.StepDefinitions
     public class AccountManagerStepDefinitions
     {
         private readonly IBankAccountDriver _driver;
+        private readonly IBankFeesDriver _bankFeesDriver;
 
         public AccountManagerStepDefinitions()
         {
             _driver = new BankAccountApiDriver();
+
+            _bankFeesDriver = new BankFeesDriver();
         }
 
         [Given(@"Masoud as a customer")]
@@ -36,5 +39,17 @@ namespace BankAccount.AcceptanceTests.StepDefinitions
         {
             await _driver.AssertThatOwnerHasAnAccountWithInitialBalance(owner, expectedAmount);
         }
+
+
+        #region open a new bank account - calculating bank fees
+
+        [Given(@"Bank fees are as follow")]
+        public async Task GivenBankFeesAreAsFollow(Table table)
+        {
+            await _bankFeesDriver.SetSmsFees(table);
+        }
+        
+
+        #endregion
     }
 }

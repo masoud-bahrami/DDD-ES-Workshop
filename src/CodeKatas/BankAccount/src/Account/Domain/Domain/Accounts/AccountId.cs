@@ -4,11 +4,15 @@ namespace BankAccount.Domain.Accounts;
 
 public class AccountId : Identity<string>
 {
-    public AccountId(string accountId)
+    public static AccountId New(string value) => new(value);
+
+    private AccountId(string accountId)
         => Id = accountId;
 
     protected override IEnumerable<object> GetEqualityComponents()
     {
         yield return Id;
     }
+
+    
 }

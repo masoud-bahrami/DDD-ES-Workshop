@@ -7,11 +7,13 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="7.0.14" />
 		<PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.2" />
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
 	</ItemGroup>
 
 	<ItemGroup>
+		
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.9" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.9">
 			<PrivateAssets>all</PrivateAssets>
@@ -20,9 +22,9 @@
 
 	</ItemGroup>
 	<ItemGroup>
-		<ProjectReference Include="..\..\BankAccount.ApplicationServices.Query\BankAccount.ApplicationServices.Query.csproj" />
 		<ProjectReference Include="..\Account\ApplicationServices\ApplicationServices\BankAccount.ApplicationServices.csproj" />
 		<ProjectReference Include="..\Account\Domain\Domain.Services\BankAccount.Domain.Services.csproj" />
+		<ProjectReference Include="..\Fees\BankAccount.BankFees\BankAccount.BankFees.csproj" />
 		<ProjectReference Include="..\Infrastructure\BankAccount.Infrastructure.csproj" />
 		<ProjectReference Include="..\Reporting\Query\BankAccount.ApplicationServices.Query.csproj" />
 	</ItemGroup>

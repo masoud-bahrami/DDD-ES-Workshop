@@ -9,6 +9,7 @@
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.0.0" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 		<PackageReference Include="SpecFlow.Plus.LivingDocPlugin" Version="3.9.57" />
 		<PackageReference Include="SpecFlow.xUnit" Version="3.9.40" />
 		<PackageReference Include="xunit" Version="2.4.1" />
@@ -27,6 +28,7 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\src\API\Bank.Account.API.csproj" />
+	  <ProjectReference Include="..\src\Fees\BankAccount.BankFees\BankAccount.BankFees.csproj" />
 	</ItemGroup>
 
 </Project>

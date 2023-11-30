@@ -10,20 +10,20 @@ public class OpenBankAccountCommandHandler : IWantToHandleCommand<OpenBankAccoun
     private readonly IAccountDomainService _accountDomainService;
 
     private readonly IAccountRepository _repository;
+    private readonly IAccountIdGeneratorDomainService _accountIdGeneratorService;
     // command
     // procedural
     // orchestration (use case => Open a new bank account)
-    public OpenBankAccountCommandHandler(IAccountDomainService accountDomainService, IAccountRepository repository)
+    public OpenBankAccountCommandHandler(IAccountDomainService accountDomainService, IAccountRepository repository, IAccountIdGeneratorDomainService accountIdGeneratorService)
     {
         _accountDomainService = accountDomainService;
         _repository = repository;
+        _accountIdGeneratorService = accountIdGeneratorService;
     }
 
     public override async Task Handle(OpenBankAccountCommand command)
     {
-        var accountId = "1";
-
-        Account account = new Account(accountId, command.InitialAmount, _accountDomainService);
+        var account = new Account(_accountIdGeneratorService.CreateNewAccountId(), command.InitialAmount, _accountDomainService);
 
         await _repository.Store(account);
     }
