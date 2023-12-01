@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\libraries\Zero.Dispatcher\Zero.Dispatcher.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\BankAccount.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\Reporting\Query\BankAccount.ApplicationServices.Query.csproj" />
+    <ProjectReference Include="..\ApplicationServices\ApplicationServices\BankAccount.ApplicationServices.csproj" />
+    <ProjectReference Include="..\Domain\Contracts\Bank.Account.Domain.Contracts.csproj" />
+    <ProjectReference Include="..\Domain\Domain.Services\BankAccount.Domain.Services.csproj" />
+  </ItemGroup>
+
+</Project>

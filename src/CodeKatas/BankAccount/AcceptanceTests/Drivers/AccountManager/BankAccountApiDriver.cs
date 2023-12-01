@@ -6,20 +6,13 @@ namespace BankAccount.AcceptanceTests.Drivers.AccountManager;
 
 public class BankAccountApiDriver : IBankAccountDriver
 {
+    // test double
+    // 
     private readonly HttpClient _httpClient;
 
-    public BankAccountApiDriver()
+    public BankAccountApiDriver(HttpClient httpClient)
     {
-        var application = new WebApplicationFactory<Program>()
-            .WithWebHostBuilder(builder =>
-            {
-                builder.ConfigureServices(services =>
-                {
-                });
-            });
-
-        _httpClient = application.CreateClient();
-
+        _httpClient = httpClient;
     }
     public async Task OpenBank(string owner, decimal initialAmount)
     {

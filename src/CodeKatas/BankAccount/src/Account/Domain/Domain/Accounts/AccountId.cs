@@ -6,6 +6,7 @@ public class AccountId : Identity<string>
 {
     public static AccountId New(string value) => new(value);
 
+    
     private AccountId(string accountId)
         => Id = accountId;
 

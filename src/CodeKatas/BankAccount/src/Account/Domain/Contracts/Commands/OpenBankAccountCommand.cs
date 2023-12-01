@@ -1,6 +1,6 @@
 ﻿using Zero.Dispatcher.Command;
 
-namespace BankAccount.ApplicationServices;
+namespace Bank.Account.Domain.Contracts.Commands;
 
 public class OpenBankAccountCommand : IsACommand
 {

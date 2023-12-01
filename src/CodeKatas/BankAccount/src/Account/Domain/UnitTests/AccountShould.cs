@@ -44,7 +44,12 @@ namespace BankAccount.Domain.UnitTests
         {
             IAccountDomainService accountDomainService = new AccountDomainService(10000);
 
-            return new Account(AccountId.New(accountId), initialAmount, accountDomainService);
+            return new Account(AccountId.New(accountId), initialAmount, accountDomainService , BankFeesDomainService());
+        }
+
+        private static IBankFeesDomainService BankFeesDomainService()
+        {
+            return new BankFeesDomainService(new BankFeesViewModel(0,0));
         }
 
         private static Account CreateAccount(decimal initialAmount)

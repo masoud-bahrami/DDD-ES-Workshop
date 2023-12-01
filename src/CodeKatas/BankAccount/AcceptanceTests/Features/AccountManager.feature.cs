@@ -114,10 +114,10 @@ this.ScenarioInitialize(scenarioInfo);
 #line 7
  testRunner.And("There is no any bank account for Masoud", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 8
+#line 9
  testRunner.When("Masoud opens a new bank account with 10000 toman", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 9
+#line 10
  testRunner.Then("A new bank account will be opened for Masoud with 10000 toman balance", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -132,7 +132,7 @@ this.ScenarioInitialize(scenarioInfo);
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("open a new bank account - calculating bank fees", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 12
+#line 18
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -152,10 +152,10 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 13
+#line 21
  testRunner.Given("Masoud as a customer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 14
+#line 22
  testRunner.And("There is no any bank account for Masoud", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
                 TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
@@ -164,14 +164,14 @@ this.ScenarioInitialize(scenarioInfo);
                 table1.AddRow(new string[] {
                             "500",
                             "500"});
-#line 15
+#line 23
  testRunner.And("Bank fees are as follow", ((string)(null)), table1, "And ");
 #line hidden
-#line 19
+#line 28
  testRunner.When("Masoud opens a new bank account with 10000 toman", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 20
- testRunner.Then("A new bank account will be opened for Masoud with 90000 toman balance", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 31
+ testRunner.Then("A new bank account will be opened for Masoud with 9000 toman balance", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

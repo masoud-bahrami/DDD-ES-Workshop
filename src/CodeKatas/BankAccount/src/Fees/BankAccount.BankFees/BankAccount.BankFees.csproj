@@ -6,8 +6,7 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\Infrastructure\BankAccount.Infrastructure.csproj" />
-  </ItemGroup>
-
+	<ItemGroup>
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.13" />
+	</ItemGroup>
 </Project>

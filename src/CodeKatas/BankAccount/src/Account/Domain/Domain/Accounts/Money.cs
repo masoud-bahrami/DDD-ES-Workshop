@@ -7,6 +7,7 @@ public class Money : ValueObject<Money>
     public decimal Amount { get; init; }
     public string Currency { get; }
 
+
     public static Money Rial(decimal amount)
         => new(amount, "Rial");
     
@@ -25,8 +26,10 @@ public class Money : ValueObject<Money>
 
    
 
+    // whole object
     protected override IEnumerable<object> GetEqualityComponents()
     {
+        
         yield return Amount;
         yield return Currency;
     }

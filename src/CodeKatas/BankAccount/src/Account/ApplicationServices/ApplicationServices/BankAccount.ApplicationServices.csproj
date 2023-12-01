@@ -7,7 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\..\..\Zero\Zero\Zero.Dispatcher.csproj" />
+    <ProjectReference Include="..\..\..\Fees\BankAccount.BankFees\BankAccount.BankFees.csproj" />
+    <ProjectReference Include="..\..\Domain\Contracts\Bank.Account.Domain.Contracts.csproj" />
+    <ProjectReference Include="..\..\Domain\Domain.Services\BankAccount.Domain.Services.csproj" />
     <ProjectReference Include="..\..\Domain\Domain\BankAccount.Domain.csproj" />
   </ItemGroup>
 

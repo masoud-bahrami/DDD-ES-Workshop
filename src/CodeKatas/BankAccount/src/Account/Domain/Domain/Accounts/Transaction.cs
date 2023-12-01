@@ -2,6 +2,15 @@
 
 namespace BankAccount.Domain.Accounts;
 
+//
+// 0213456789 => value object
+// 0215236589 => value object
+
+// 50$ => deposit
+
+// without public contrstructors
+// test
+
 public abstract class Transaction : ValueObject<Transaction>
 {
     public DateTime OccurredAt { get; private set; }
@@ -57,12 +66,12 @@ public class SmsFeesTransaction : WithdrawalTransaction
     }
 }
 
-public class BankFeesTransaction : WithdrawalTransaction
+public class BankChargesTransaction : WithdrawalTransaction
 {
-    public static BankFeesTransaction New(Money fee)
+    public static BankChargesTransaction New(Money fee)
         => new(fee);
 
-    private BankFeesTransaction(Money money) : base(money)
+    private BankChargesTransaction(Money money) : base(money)
     {
     }
 }

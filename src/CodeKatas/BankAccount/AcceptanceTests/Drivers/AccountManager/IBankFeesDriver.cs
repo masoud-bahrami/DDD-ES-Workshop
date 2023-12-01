@@ -6,30 +6,21 @@ using Newtonsoft.Json;
 
 namespace BankAccount.AcceptanceTests.Drivers.AccountManager;
 
-internal interface IBankFeesDriver
+public interface IBankFeesDriver
 {
-    Task SetSmsFees(Table amount);
+    Task SetFees(Table amount);
 }
 
 public class BankFeesDriver : IBankFeesDriver
 {
     private readonly HttpClient _httpClient;
 
-    public BankFeesDriver()
+    public BankFeesDriver(HttpClient httpClient)
     {
-        var application = new WebApplicationFactory<Program>()
-            .WithWebHostBuilder(builder =>
-            {
-                builder.ConfigureServices(services =>
-                {
-                });
-            });
-
-        _httpClient = application.CreateClient();
-
+        _httpClient = httpClient;
     }
 
-    public async Task SetSmsFees(Table amount)
+    public async Task SetFees(Table amount)
     {
         var setBankFeesCommand = new SetBankFeesCommand
         {
@@ -37,11 +28,14 @@ public class BankFeesDriver : IBankFeesDriver
             Charges = decimal.Parse(amount.Rows[0]["Charges"]),
         };
 
-        var httpResponseMessage = await _httpClient.PostAsync("api/bankfees",
-            new StringContent(JsonConvert.SerializeObject(setBankFeesCommand)
-            , Encoding.UTF8,"application/json")
-            );
+        var httpResponseMessage = await _httpClient.PostAsync("api/bankfees", Content(setBankFeesCommand));
 
         httpResponseMessage.EnsureSuccessStatusCode();
+    }
+
+    private static StringContent Content(SetBankFeesCommand setBankFeesCommand)
+    {
+        return new StringContent(JsonConvert.SerializeObject(setBankFeesCommand)
+            , Encoding.UTF8,"application/json");
     }
 }

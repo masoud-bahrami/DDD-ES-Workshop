@@ -8,12 +8,12 @@ namespace BankAccount.AcceptanceTests.StepDefinitions
         private readonly IBankAccountDriver _driver;
         private readonly IBankFeesDriver _bankFeesDriver;
 
-        public AccountManagerStepDefinitions()
+        public AccountManagerStepDefinitions(IBankAccountDriver driver, IBankFeesDriver bankFeesDriver)
         {
-            _driver = new BankAccountApiDriver();
-
-            _bankFeesDriver = new BankFeesDriver();
+            _driver = driver;
+            _bankFeesDriver = bankFeesDriver;
         }
+
 
         [Given(@"Masoud as a customer")]
         public void GivenPersonAsACustomer()
@@ -46,7 +46,7 @@ namespace BankAccount.AcceptanceTests.StepDefinitions
         [Given(@"Bank fees are as follow")]
         public async Task GivenBankFeesAreAsFollow(Table table)
         {
-            await _bankFeesDriver.SetSmsFees(table);
+            await _bankFeesDriver.SetFees(table);
         }
         
 

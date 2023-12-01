@@ -5,10 +5,15 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BankAccount.Infrastructure;
 
+// Accounts
+// | Id | Transactions|
+// | 1  | [{} , {}] |
+
+ 
 public class BankAccountDbContext : DbContext
 {
     public DbSet<AccountMemento> Accounts { get; set; }
-    public DbSet<BankFees> BankFees { get; set; }
+    
 
     public BankAccountDbContext(DbContextOptions<BankAccountDbContext> options)
             : base(options)
@@ -21,14 +26,6 @@ public class BankAccountDbContext : DbContext
             .Property(p => p.Transactions)
             .HasConversion<TransactionsConverter>();
         
-        modelBuilder.Entity<BankFees>()
-            .Property<int>("ID")
-            .ValueGeneratedOnAdd();
-
-        modelBuilder
-            .Entity<BankFees>()
-            .HasKey("ID");
-
         base.OnModelCreating(modelBuilder);
     }
 }

@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\..\Zero\Zero\Zero.Dispatcher.csproj" />
+    <ProjectReference Include="..\..\..\libraries\Zero.Dispatcher\Zero.Dispatcher.csproj" />
     <ProjectReference Include="..\..\Infrastructure\BankAccount.Infrastructure.csproj" />
   </ItemGroup>
 

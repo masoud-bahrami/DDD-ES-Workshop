@@ -25,7 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Zero\Zero\Zero.Dispatcher.csproj" />
+    <ProjectReference Include="..\Zero.Dispatcher\Zero.Dispatcher.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,10 +1,13 @@
+using Bank.Account.Domain.Contracts.Commands;
 using BankAccount.ApplicationServices;
 using BankAccount.ApplicationServices.Query;
 using BankAccount.BankFees;
+using BankAccount.BankFees.Bootstrapper;
 using BankAccount.Domain.Accounts.Repository;
 using BankAccount.Domain.Accounts.Services;
 using BankAccount.Domain.Services;
 using BankAccount.Infrastructure;
+using BankAccounting.Account.Bootstrapper;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 using Zero.Dispatcher.Command;
@@ -27,38 +30,11 @@ namespace Bank.Account.API
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
-            builder.Services.AddScoped<ICommandDispatcher, CommandDispatcher>();
-            builder.Services.AddScoped<IQueryDispatcher, QueryDispatcher>();
 
-            // db context(s)
-            builder.Services.AddSingleton<BankAccountDbContext>();
+            AccountBootstrapper.Run(builder.Services);
 
-            builder.Services.AddSingleton(
-                sp =>
-                {
-                    var connection = new SqliteConnection("Data Source=:memory:");
+            BankFeesBootstrapper.Run(builder.Services);
 
-                    connection.Open();
-
-                    return new DbContextOptionsBuilder<BankAccountDbContext>()
-                        .UseSqlite(connection).Options;
-                });
-
-            // register query handlers
-            builder.Services.AddTransient<IWantToHandleQuery<GetAccountBalanceQuery, decimal>, GetAccountBalanceQueryHandler>();
-
-            // register command handlers
-            builder.Services.AddScoped<IWantToHandleCommand<OpenBankAccountCommand>, OpenBankAccountCommandHandler>();
-
-            builder.Services.AddTransient<IAccountDomainService, AccountDomainService>(sp => new AccountDomainService(10000));
-            builder.Services.AddTransient<IAccountIdGeneratorDomainService, AccountIdGeneratorDomainService>();
-            
-            
-            builder.Services.AddTransient<IBankFeesServices, BankFeesServices>();
-
-
-            // register repositories
-            builder.Services.AddScoped<IAccountRepository, AccountRepository>();
 
             var app = builder.Build();
 
@@ -85,6 +61,10 @@ namespace Bank.Account.API
             var bankAccountDbContext = app.Services.GetService<BankAccountDbContext>();
             bankAccountDbContext.Database.EnsureCreated();
             bankAccountDbContext.Database.Migrate();
+            
+            var bankFeesDbContext= app.Services.GetService<BankFeesDbContext>();
+            bankFeesDbContext.Database.EnsureCreated();
+            bankFeesDbContext.Database.Migrate();
 
             app.Run();
         }

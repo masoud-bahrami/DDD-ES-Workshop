@@ -1,8 +1,8 @@
-﻿namespace BankAccount.Infrastructure;
+﻿namespace BankAccount.BankFees;
 
 public class BankFees
 {
-    private BankFees(){}
+    private BankFees() { }
     public BankFees(decimal smsFees, decimal charges)
     {
         SmsFees = smsFees;
