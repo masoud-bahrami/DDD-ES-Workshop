@@ -7,10 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Events\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\..\..\libraries\Zero.Dispatcher\Zero.Dispatcher.csproj" />
   </ItemGroup>
 

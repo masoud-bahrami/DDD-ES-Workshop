@@ -1,7 +1,6 @@
-﻿using System.Text.Json;
-using System.Text.Json.Serialization;
-using BankAccount.Domain.Accounts.Memento;
+﻿using BankAccount.Domain.Accounts.Memento;
 using Microsoft.EntityFrameworkCore;
+using Zero.DataBase;
 
 namespace BankAccount.Infrastructure;
 
@@ -10,12 +9,12 @@ namespace BankAccount.Infrastructure;
 // | 1  | [{} , {}] |
 
  
-public class BankAccountDbContext : DbContext
+public class BankAccountDbContext : ZeroDbContext
 {
     public DbSet<AccountMemento> Accounts { get; set; }
     
 
-    public BankAccountDbContext(DbContextOptions<BankAccountDbContext> options)
+    public BankAccountDbContext(DbContextOptions<ZeroDbContext> options)
             : base(options)
     {
     }
@@ -25,7 +24,11 @@ public class BankAccountDbContext : DbContext
         modelBuilder.Entity<AccountMemento>()
             .Property(p => p.Transactions)
             .HasConversion<TransactionsConverter>();
-        
+
+        modelBuilder.Entity<AccountMemento>()
+            .OwnsOne(typeof(Domain.Accounts.Bank), "OpenedIn");
+
+        // OpenId_Name | OpenId_Branch
         base.OnModelCreating(modelBuilder);
     }
 }

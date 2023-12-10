@@ -3,4 +3,5 @@
 public interface IAccountRepository
 {
     Task Store(Account account);
+    Task<Account> Reconstitute(AccountId id);
 }

@@ -1,13 +1,13 @@
 ﻿namespace Zero.Domain;
 
-public abstract class Entity<TId> where TId : Identity{
+public abstract class Entity<TId> where TId : IsAnIdentity{
 
-    public virtual TId Id { get; protected set; }
+    public virtual TId Identity { get; protected set; }
 
     
-    protected Entity(TId id)
+    protected Entity(TId identity)
     {
-        Id = id;
+        Identity = identity;
     }
 
     public override bool Equals(object obj)
@@ -18,10 +18,10 @@ public abstract class Entity<TId> where TId : Identity{
         if (ReferenceEquals(this, other))
             return true;
         
-        if (Id.Equals(default) || other.Id.Equals(default))
+        if (Identity.Equals(default) || other.Identity.Equals(default))
             return false;
 
-        return Id.Equals(other.Id);
+        return Identity.Equals(other.Identity);
     }
 
     public static bool operator ==(Entity<TId> a, Entity<TId> b)
@@ -42,7 +42,7 @@ public abstract class Entity<TId> where TId : Identity{
 
     public override int GetHashCode()
     {
-        return Id.GetHashCode();
+        return Identity.GetHashCode();
     }
     
 }

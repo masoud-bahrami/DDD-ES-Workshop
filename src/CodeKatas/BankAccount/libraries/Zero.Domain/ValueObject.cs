@@ -3,6 +3,9 @@
 public abstract class ValueObject<T>
     where T : ValueObject<T>
 {
+
+    //protected long  hidennId { get; set; }
+
     public override bool Equals(object obj)
     {
         if (obj == null)

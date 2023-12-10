@@ -9,12 +9,7 @@ namespace BankAccount.BankFees.Bootstrapper
     {
         public static void Run(IServiceCollection serviceCollection)
         {
-
-            // bank fees BC
-
             serviceCollection.AddSingleton<BankFeesDbContext>();
-            serviceCollection.AddTransient<IBankFeesServices, BankFeesServices>();
-            
             serviceCollection.AddSingleton(
                 sp =>
                 {
@@ -26,6 +21,15 @@ namespace BankAccount.BankFees.Bootstrapper
                         .UseSqlite(connection).Options;
                 });
 
+            serviceCollection.AddTransient<IBankFeesServices, BankFeesServices>();
+
+        }
+
+        public static void Migrate(IServiceProvider serviceProvider)
+        {
+            var bankFeesDbContext = serviceProvider.GetService<BankFeesDbContext>();
+            bankFeesDbContext.Database.EnsureCreated();
+            bankFeesDbContext.Database.Migrate();
         }
     }
 }

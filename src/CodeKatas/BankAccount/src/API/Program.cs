@@ -32,17 +32,10 @@ namespace Bank.Account.API
 
 
             AccountBootstrapper.Run(builder.Services);
-
             BankFeesBootstrapper.Run(builder.Services);
-
-
+            
             var app = builder.Build();
-
-
-
-
-
-
+            
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
@@ -58,13 +51,9 @@ namespace Bank.Account.API
             app.MapControllers();
 
 
-            var bankAccountDbContext = app.Services.GetService<BankAccountDbContext>();
-            bankAccountDbContext.Database.EnsureCreated();
-            bankAccountDbContext.Database.Migrate();
-            
-            var bankFeesDbContext= app.Services.GetService<BankFeesDbContext>();
-            bankFeesDbContext.Database.EnsureCreated();
-            bankFeesDbContext.Database.Migrate();
+          
+            AccountBootstrapper.Migrate(app.Services);
+            BankFeesBootstrapper.Migrate(app.Services);
 
             app.Run();
         }

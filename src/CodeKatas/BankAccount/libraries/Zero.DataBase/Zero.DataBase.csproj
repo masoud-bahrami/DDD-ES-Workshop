@@ -6,9 +6,7 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Zero.DataBase\Zero.DataBase.csproj" />
-    <ProjectReference Include="..\Zero.Domain\Zero.Domain.csproj" />
-  </ItemGroup>
-
+	<ItemGroup>
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.1" />
+	</ItemGroup>
 </Project>

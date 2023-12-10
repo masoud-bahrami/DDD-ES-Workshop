@@ -12,6 +12,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\..\libraries\Zero.DataBase\Zero.DataBase.csproj" />
 	  <ProjectReference Include="..\Account\Domain\Domain\BankAccount.Domain.csproj" />
 	</ItemGroup>
 

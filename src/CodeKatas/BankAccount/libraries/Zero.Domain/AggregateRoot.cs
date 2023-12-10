@@ -1,8 +1,23 @@
-﻿namespace Zero.Domain;
+﻿using System.Collections.Generic;
 
-public class AggregateRoot<TId> : Entity<TId> where TId : Identity
+namespace Zero.Domain;
+
+public abstract class AggregateRoot<TId> : Entity<TId> where TId : IsAnIdentity
 {
-    public AggregateRoot(TId id) : base(id)
+    private readonly Queue<IsADomainEvent> _events = new();
+
+    protected AggregateRoot(TId identity) : base(identity)
     {
+    }
+
+    protected void Apply(IsADomainEvent @event) 
+        => _events.Enqueue(@event);
+
+    public Queue<IsADomainEvent> GetEvents()
+    {
+        var events = new Queue<IsADomainEvent>(_events);
+        
+        _events.Clear();
+        return events;
     }
 }

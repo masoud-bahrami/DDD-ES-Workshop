@@ -17,6 +17,9 @@ public class TransactionsConverter : ValueConverter<Transactions, string>
 }
 
 
+
+
+
 public class MyAccount
 {
     public long Id { get; set; }

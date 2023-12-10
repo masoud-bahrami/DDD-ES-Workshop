@@ -2,7 +2,7 @@
 
 public interface IQueryDispatcher
 {
-    Task<T1> RunQuery<T, T1>(T query) where T : IQuery;
+    Task<T1> RunQuery<T, T1>(T query) where T : IAmAQuery;
 }
 
 public class QueryDispatcher : IQueryDispatcher
@@ -13,7 +13,7 @@ public class QueryDispatcher : IQueryDispatcher
         => _serviceProvider = serviceProvider;
 
 
-    public async Task<T1> RunQuery<T, T1>(T query) where T : IQuery
+    public async Task<T1> RunQuery<T, T1>(T query) where T : IAmAQuery
     {
         var queryHandler = _serviceProvider
             .GetService(typeof(IWantToHandleQuery<T, T1>));

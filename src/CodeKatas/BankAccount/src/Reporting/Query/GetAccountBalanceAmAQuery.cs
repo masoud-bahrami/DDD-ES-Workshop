@@ -2,11 +2,11 @@
 
 namespace BankAccount.ApplicationServices.Query;
 
-public class GetAccountBalanceQuery : IQuery
+public class GetAccountBalanceAmAQuery : IAmAQuery
 {
     public string Owner { get; }
 
-    public GetAccountBalanceQuery(string owner)
+    public GetAccountBalanceAmAQuery(string owner)
     {
         Owner = owner;
     }
