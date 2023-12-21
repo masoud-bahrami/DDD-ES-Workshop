@@ -1,4 +1,5 @@
 using BankAccount.AcceptanceTests.Drivers.AccountManager;
+using BankAccount.AcceptanceTests.Drivers.BankFees;
 
 namespace BankAccount.AcceptanceTests.StepDefinitions
 {

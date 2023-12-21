@@ -55,7 +55,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BankAccounting.Account.Boot
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BankAccount.BankFees.Bootstrapper", "src\Fees\BankAccount.BankFees.Bootstrapper\BankAccount.BankFees.Bootstrapper.csproj", "{70FEFDDD-6641-4886-B6E3-9B8E4F839614}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zero.DataBase", "libraries\Zero.DataBase\Zero.DataBase.csproj", "{971B3E99-F0EC-4A14-B460-2FEC19228EB3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zero.DataBase", "libraries\Zero.DataBase\Zero.DataBase.csproj", "{971B3E99-F0EC-4A14-B460-2FEC19228EB3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CustomerManagement", "CustomerManagement", "{DF2CA498-A9AA-448D-B55F-B87B96BC2469}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankAccount.CustomerManagement", "src\CustomerManagement\BankAccount.CustomerManagement\BankAccount.CustomerManagement.csproj", "{98E5874F-3B65-46A1-9892-829D734910F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankAccount.CustomerManagement.Bootstrapper", "src\CustomerManagement\BankAccount.CustomerManagement.Bootstrapper\BankAccount.CustomerManagement.Bootstrapper.csproj", "{7C29468E-1095-494F-A9AB-36E4B44E1C3B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -131,6 +137,14 @@ Global
 		{971B3E99-F0EC-4A14-B460-2FEC19228EB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{971B3E99-F0EC-4A14-B460-2FEC19228EB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{971B3E99-F0EC-4A14-B460-2FEC19228EB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98E5874F-3B65-46A1-9892-829D734910F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98E5874F-3B65-46A1-9892-829D734910F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98E5874F-3B65-46A1-9892-829D734910F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98E5874F-3B65-46A1-9892-829D734910F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C29468E-1095-494F-A9AB-36E4B44E1C3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C29468E-1095-494F-A9AB-36E4B44E1C3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C29468E-1095-494F-A9AB-36E4B44E1C3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C29468E-1095-494F-A9AB-36E4B44E1C3B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -160,6 +174,9 @@ Global
 		{7634BAB7-EB84-475D-B3D9-3D6257D3E846} = {44BED141-79D1-4E87-9383-05188378AA04}
 		{70FEFDDD-6641-4886-B6E3-9B8E4F839614} = {CCE53ED0-F331-4224-8FF8-3A7843A96508}
 		{971B3E99-F0EC-4A14-B460-2FEC19228EB3} = {F494E3AA-D551-4DC1-AD2B-D8152FD7248F}
+		{DF2CA498-A9AA-448D-B55F-B87B96BC2469} = {26A35F8B-3620-4F7C-AED7-EE3DF37172B7}
+		{98E5874F-3B65-46A1-9892-829D734910F7} = {DF2CA498-A9AA-448D-B55F-B87B96BC2469}
+		{7C29468E-1095-494F-A9AB-36E4B44E1C3B} = {DF2CA498-A9AA-448D-B55F-B87B96BC2469}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {55A343D8-2356-4679-B366-9AA716570392}

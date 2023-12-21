@@ -8,6 +8,10 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <SpecFlowObsoleteCodeBehindFiles Remove="Features\AccountManager - Copy.feature.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.0.0" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 		<PackageReference Include="SpecFlow.Plus.LivingDocPlugin" Version="3.9.57" />
@@ -29,6 +33,19 @@
 	<ItemGroup>
 	  <ProjectReference Include="..\src\API\Bank.Account.API.csproj" />
 	  <ProjectReference Include="..\src\Fees\BankAccount.BankFees\BankAccount.BankFees.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Features\CustomerRegistration.feature.cs">
+	    <DependentUpon>CustomerRegistration.feature</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <SpecFlowFeatureFiles Update="Features\CustomerRegistration.feature">
+	    <Visible>$(UsingMicrosoftNETSdk)</Visible>
+	    <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+	  </SpecFlowFeatureFiles>
 	</ItemGroup>
 
 </Project>

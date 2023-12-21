@@ -1,15 +1,8 @@
 using System.Text;
-using Bank.Account.API;
 using BankAccount.BankFees;
-using Microsoft.AspNetCore.Mvc.Testing;
 using Newtonsoft.Json;
 
-namespace BankAccount.AcceptanceTests.Drivers.AccountManager;
-
-public interface IBankFeesDriver
-{
-    Task SetFees(Table amount);
-}
+namespace BankAccount.AcceptanceTests.Drivers.BankFees;
 
 public class BankFeesDriver : IBankFeesDriver
 {

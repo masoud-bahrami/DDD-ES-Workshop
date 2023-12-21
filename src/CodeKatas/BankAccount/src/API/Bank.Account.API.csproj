@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
 	<PropertyGroup>
 		<TargetFramework>net7.0</TargetFramework>
@@ -26,6 +26,8 @@
 		<ProjectReference Include="..\Account\ApplicationServices\ApplicationServices\BankAccount.ApplicationServices.csproj" />
 		<ProjectReference Include="..\Account\Bootstrapper\BankAccounting.Account.Bootstrapper.csproj" />
 		<ProjectReference Include="..\Account\Domain\Domain.Services\BankAccount.Domain.Services.csproj" />
+		<ProjectReference Include="..\CustomerManagement\BankAccount.CustomerManagement.Bootstrapper\BankAccount.CustomerManagement.Bootstrapper.csproj" />
+		<ProjectReference Include="..\CustomerManagement\BankAccount.CustomerManagement\BankAccount.CustomerManagement.csproj" />
 		<ProjectReference Include="..\Fees\BankAccount.BankFees.Bootstrapper\BankAccount.BankFees.Bootstrapper.csproj" />
 		<ProjectReference Include="..\Fees\BankAccount.BankFees\BankAccount.BankFees.csproj" />
 		<ProjectReference Include="..\Infrastructure\BankAccount.Infrastructure.csproj" />
