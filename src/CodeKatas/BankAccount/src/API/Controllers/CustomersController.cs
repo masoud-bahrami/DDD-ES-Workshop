@@ -1,4 +1,4 @@
-﻿using BankAccount.CustomerManagement;
+﻿using BankAccount.CustomerManagement.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Bank.Account.API.Controllers;

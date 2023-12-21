@@ -1,4 +1,7 @@
-﻿using Microsoft.Data.Sqlite;
+﻿using BankAccount.CustomerManagement.DbContext;
+using BankAccount.CustomerManagement.Domain;
+using BankAccount.CustomerManagement.Services;
+using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -10,6 +13,9 @@ namespace BankAccount.CustomerManagement.Bootstrapper
         {
             serviceCollection.AddSingleton<ICustomerServices, CustomerServices>();
             serviceCollection.AddSingleton<CustomerDbContext>();
+            
+            serviceCollection.AddSingleton< ICustomerIdDomainService ,CustomerIdDomainService >();
+
             serviceCollection.AddSingleton(
                 sp =>
                 {

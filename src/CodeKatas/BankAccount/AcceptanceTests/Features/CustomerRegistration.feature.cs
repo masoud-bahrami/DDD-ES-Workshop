@@ -125,7 +125,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("A new customer called Masoud enroll in bank with following information", ((string)(null)), table2, "When ");
 #line hidden
 #line 9
- testRunner.Then("We will give him customer id 1234-4321-2532-2534 which he can use for further ser" +
+ testRunner.Then("We will give him customer id 1234-4321-2532-2533 which he can use for further ser" +
                         "vices", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

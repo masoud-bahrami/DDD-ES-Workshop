@@ -1,4 +1,6 @@
-﻿namespace BankAccount.CustomerManagement;
+﻿using BankAccount.CustomerManagement.Services;
+
+namespace BankAccount.CustomerManagement.Domain;
 
 public class Customer
 {
@@ -7,16 +9,19 @@ public class Customer
     public DateTime BirthDate { get; set; }
     public string LastName { get; set; }
     public string FirstName { get; set; }
+    public string CustomerId { get; set; }
 
-    private Customer(){}
-    public Customer(long id, RegisterCustomerCommand cmd)
+
+    private Customer() { }
+    public Customer(long id, RegisterCustomerCommand cmd, ICustomerIdDomainService service)
     {
         Id = id;
         FirstName = cmd.FirstName;
-        LastName= cmd.LastName;
+        LastName = cmd.LastName;
         BirthDate = cmd.BirthDate;
         NationalCode = cmd.NationalCode;
+        CustomerId = service.NextId();
     }
 
-    
+
 }

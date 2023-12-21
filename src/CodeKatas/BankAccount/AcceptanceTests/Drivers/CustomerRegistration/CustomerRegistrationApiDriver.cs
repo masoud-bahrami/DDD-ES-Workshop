@@ -1,6 +1,6 @@
 using System.Text;
 using Bank.Account.API.Controllers;
-using BankAccount.CustomerManagement;
+using BankAccount.CustomerManagement.Services;
 using Newtonsoft.Json;
 
 namespace BankAccount.AcceptanceTests.Drivers.CustomerRegistration;

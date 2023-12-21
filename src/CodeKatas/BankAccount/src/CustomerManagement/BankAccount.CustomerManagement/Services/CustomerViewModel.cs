@@ -1,4 +1,4 @@
-namespace BankAccount.CustomerManagement;
+namespace BankAccount.CustomerManagement.Services;
 
 public class CustomerViewModel
 {

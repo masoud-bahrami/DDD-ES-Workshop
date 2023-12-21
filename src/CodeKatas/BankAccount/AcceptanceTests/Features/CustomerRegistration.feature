@@ -6,4 +6,4 @@ Scenario: registring a new customer
 	When A new customer called Masoud enroll in bank with following information
 		| First Name | Last Name | National Code | Birth Date |
 		| Masoud     | Bahrami   | 012345678     | 1990-04-28 |
-	Then We will give him customer id 1234-4321-2532-2534 which he can use for further services
+	Then We will give him customer id 1234-4321-2532-2533 which he can use for further services
