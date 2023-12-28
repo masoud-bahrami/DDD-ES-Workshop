@@ -1,3 +1,4 @@
+using Bank.Account.Domain.Contracts.Commands;
 using Bank.Account.Domain.Contracts.Events;
 using BankAccount.Domain.Accounts.Memento;
 using BankAccount.Domain.Accounts.Services;
@@ -21,6 +22,7 @@ public class Bank : ValueObject<Bank>
         yield return Branch;
     }
 }
+
 //public class Owner : ValueObject<Owner>
 //{
 //    public string OwnerId { get; set; } = "masoud-124";
@@ -32,7 +34,7 @@ public class Bank : ValueObject<Bank>
 //    }
 //}
 
-public class Account : AggregateRoot<AccountId>
+public partial class Account : AggregateRoot<AccountId>
 {
     public Transactions Transactions { get; private set; } = Transactions.Init();
     public Bank OpenedIn { get; private set; }
@@ -42,33 +44,34 @@ public class Account : AggregateRoot<AccountId>
     }
 
     public Account(AccountId accountIdentity,
-        decimal initialAmount,
+        OpenBankAccountCommand cmd,
         IAccountDomainService accountDomainService,
         IBankFeesDomainService bankFeesDomainService)
-                : base(accountIdentity)
+        : base(accountIdentity)
     {
-        accountDomainService.GuardAgainstInitialAmount(initialAmount);
+        // transaction
+        // event
+        accountDomainService.GuardAgainstInitialAmount(cmd.InitialAmount);
 
         // event-sourced
 
-        Transactions.Add(OpeningAccountTransaction.New(Money.Rial(initialAmount)));
+        // t1 , t2 , t3 , tn , tn+1
+
+        Transactions.Add(OpeningAccountTransaction.New(Money.Rial(cmd.InitialAmount)));
         var transactions = bankFeesDomainService.CalculateFeesOfNewOpeningAccount();
         Transactions.Add(transactions);
 
         OpenedIn = new Bank("Melli", "2472");
 
-        Apply(ANewAccountHasBeenOpenedDomainEvent.New(Identity.Id));
+        // break => event
+        Apply(ANewAccountHasBeenOpenedDomainEvent.New(Identity.Id, cmd.InitialAmount, "rial"));
+        Apply(SmsFeesTransactionIsAppliedDomainEvent.New(Identity.Id , 0M));
+        Apply(BankChargesTransactionIsAppliedDomainEvent.New(Identity.Id,0M));
+
+        var isADomainEvents = cmd.EventuateTo(Identity.Id);
+        Apply(isADomainEvents);
     }
-
-    //public void Deposit(DepositCommand cmd)
-    //{
-    //    // TODO check business rules
-    //    // TODO handle deposit
-
-    //    // Apply(AAccountHasBeenDeposited);
-    //}
-    public AccountMemento TakeMemento() => new(base.Identity.Id, Transactions, OpenedIn);
-
+    
     public static Account Reconstituute(AccountMemento memnto)
     {
         return new Account
@@ -81,6 +84,8 @@ public class Account : AggregateRoot<AccountId>
 
     public Money Balance()
         => Transactions.Balance();
+
+    public AccountMemento TakeMemento() => new(base.Identity.Id, Transactions, OpenedIn);
 
     public static Account Reconstituute(Queue<IsADomainEvent> events)
     {

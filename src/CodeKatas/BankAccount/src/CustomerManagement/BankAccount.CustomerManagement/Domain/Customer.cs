@@ -13,7 +13,10 @@ public class Customer
 
 
     private Customer() { }
-    public Customer(long id, RegisterCustomerCommand cmd, ICustomerIdDomainService service)
+
+    public Customer(long id, 
+        RegisterCustomerCommand cmd, 
+        ICustomerIdDomainService service)
     {
         Id = id;
         FirstName = cmd.FirstName;
@@ -22,6 +25,4 @@ public class Customer
         NationalCode = cmd.NationalCode;
         CustomerId = service.NextId();
     }
-
-
 }

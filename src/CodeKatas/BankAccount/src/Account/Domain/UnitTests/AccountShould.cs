@@ -1,3 +1,4 @@
+using Bank.Account.Domain.Contracts.Commands;
 using BankAccount.Domain.Accounts;
 using BankAccount.Domain.Accounts.Services;
 using BankAccount.Domain.Services;
@@ -6,11 +7,13 @@ namespace BankAccount.Domain.UnitTests
 {
     public class AccountShould
     {
+
         [Fact]
         public void OpenedSuccessfully()
         {
+            //InTermsOfAggregateRoot<Account, AccountId>
             // whole object - value object
-            decimal initialAmount = 10000;
+            const decimal initialAmount = 10000;
 
             var account = CreateAccount(initialAmount);
 
@@ -44,12 +47,17 @@ namespace BankAccount.Domain.UnitTests
         {
             IAccountDomainService accountDomainService = new AccountDomainService(10000);
 
-            return new Account(AccountId.New(accountId), initialAmount, accountDomainService , BankFeesDomainService());
+            return new Account(AccountId.New(accountId),
+                new OpenBankAccountCommand
+                {
+                    InitialAmount = initialAmount
+                }
+                , accountDomainService, BankFeesDomainService());
         }
 
-        private static IBankFeesDomainService BankFeesDomainService()
+        private static IBankFeesDomainService BankFeesDomainService(decimal smsFees = 0, decimal charge = 0)
         {
-            return new BankFeesDomainService(new BankFeesViewModel(0,0));
+            return new BankFeesDomainService(new BankFeesViewModel(smsFees, charge));
         }
 
         private static Account CreateAccount(decimal initialAmount)

@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace Zero.Domain;
+﻿namespace Zero.Domain;
 
 public abstract class AggregateRoot<TId> : Entity<TId> where TId : IsAnIdentity
 {
@@ -10,13 +8,18 @@ public abstract class AggregateRoot<TId> : Entity<TId> where TId : IsAnIdentity
     {
     }
 
-    protected void Apply(IsADomainEvent @event) 
+    protected void Apply(IsADomainEvent @event)
         => _events.Enqueue(@event);
+
+    protected void Apply(Queue<IsADomainEvent> @events)
+    {
+        foreach (var isADomainEvent in _events) Apply(isADomainEvent);
+    }
 
     public Queue<IsADomainEvent> GetEvents()
     {
         var events = new Queue<IsADomainEvent>(_events);
-        
+
         _events.Clear();
         return events;
     }

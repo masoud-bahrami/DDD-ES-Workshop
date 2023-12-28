@@ -6,7 +6,7 @@ namespace BankAccount.Domain.UnitTests
     {
         
         [Fact]
-        public void moneisWithTheSameAmountAndCurencyToBeEqualEachOther()
+        public void moneyWithTheSameAmountAndCurencyToBeEqualEachOther()
         {
             decimal initialAmount = 10000;
             var money = Money.Rial(initialAmount);

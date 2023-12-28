@@ -20,9 +20,8 @@ public class CustomersController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<IActionResult> Get()
-    {
-        
-        return Ok(await _customerServices.GetAll());
-    }
+    public async Task<IActionResult> Get() 
+        => Ok(await _customerServices.GetAll());
 }
+
+ // vertical slicing
