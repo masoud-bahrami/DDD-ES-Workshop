@@ -1,10 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace BankAccount.BankFees;
+namespace BankAccount.BankFees.DAL;
 
 public class BankFeesDbContext : DbContext
 {
-    public DbSet<BankFees> BankFees { get; set; }
+    public DbSet<BankFee> BankFees { get; set; }
 
     public BankFeesDbContext(DbContextOptions<BankFeesDbContext> options)
             : base(options)
@@ -13,14 +13,14 @@ public class BankFeesDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
 
-    
+
     {
-        modelBuilder.Entity<BankFees>()
+        modelBuilder.Entity<BankFee>()
             .Property<int>("ID")
             .ValueGeneratedOnAdd();
 
         modelBuilder
-            .Entity<BankFees>()
+            .Entity<BankFee>()
             .HasKey("ID");
 
         base.OnModelCreating(modelBuilder);

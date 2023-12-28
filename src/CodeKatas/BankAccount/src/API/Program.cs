@@ -1,48 +1,49 @@
 using BankAccount.BankFees.Bootstrapper;
 using BankAccounting.Account.Bootstrapper;
-using BankAccount.CustomerManagement.Bootstrapper;
 
 namespace Bank.Account.API;
 
 public class Program
 {
-    public static void Main(string[] args)
+    public static async Task Main(string[] args)
     {
-        var builder = WebApplication.CreateBuilder(args);
+        // Host
+        // Getaway
 
-        // Add services to the container.
+        // 
+        var customerManagementHost = CreateCustomerManagementWebHostBuilder(args).Build();
+        var accountManagementHost = CreateAccountManagementHostBuilder(args).Build();
+        var bankFeesHost = CreateBankFeeHostBuilder(args).Build();
 
-        builder.Services.AddControllers()
-            .AddNewtonsoftJson();
-
-        // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-        builder.Services.AddEndpointsApiExplorer();
-        builder.Services.AddSwaggerGen();
-        
-        AccountBootstrapper.Run(builder.Services);
-        BankFeesBootstrapper.Run(builder.Services);
-        CustomerManagementBootstrapper.Run(builder.Services);
-            
-        var app = builder.Build();
-            
-        // Configure the HTTP request pipeline.
-        if (app.Environment.IsDevelopment())
-        {
-            app.UseSwagger();
-            app.UseSwaggerUI();
-        }
-
-        app.UseHttpsRedirection();
-
-        app.UseAuthorization();
-
-
-        app.MapControllers();
-            
-        AccountBootstrapper.Migrate(app.Services);
-        BankFeesBootstrapper.Migrate(app.Services);
-        CustomerManagementBootstrapper.Migrate(app.Services);
-
-        app.Run();
+        await Task.WhenAll(customerManagementHost.StartAsync(),
+            accountManagementHost.StartAsync(),
+            bankFeesHost.StartAsync());
     }
+    
+    private static IHostBuilder CreateCustomerManagementWebHostBuilder(string[] args) =>
+        Host.CreateDefaultBuilder(args)
+            .ConfigureWebHostDefaults(webBuilder =>
+            {
+                webBuilder
+                       .UseUrls("http://*:5000", "https://*:5001")
+                       .UseStartup<BankAccount.CustomerManagement.Host.Startup>();
+            });
+
+    private static IHostBuilder CreateAccountManagementHostBuilder(string[] args) =>
+        Host.CreateDefaultBuilder(args)
+            .ConfigureWebHostDefaults(webBuilder =>
+            {
+                webBuilder
+                    .UseUrls("http://*:5002", "https://*:5003")
+                    .UseStartup<Bank.AccountManagement.Api.Startup>();
+            });
+
+    private static IHostBuilder CreateBankFeeHostBuilder(string[] args) =>
+        Host.CreateDefaultBuilder(args)
+            .ConfigureWebHostDefaults(webBuilder =>
+            {
+                webBuilder
+                    .UseUrls("http://*:5004", "https://*:5005")
+                    .UseStartup<BankAccount.BankFees.Host.Startup>();
+            });
 }

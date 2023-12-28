@@ -2,7 +2,6 @@
 using BankAccount.BankFees.DAL;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace BankAccount.BankFees.Bootstrapper
 {

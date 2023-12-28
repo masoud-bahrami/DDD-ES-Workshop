@@ -1,5 +1,6 @@
 using System.Text;
 using BankAccount.BankFees;
+using BankAccount.BankFees.BAL;
 using Newtonsoft.Json;
 
 namespace BankAccount.AcceptanceTests.Drivers.BankFees;
@@ -10,6 +11,7 @@ public class BankFeesDriver : IBankFeesDriver
 
     public BankFeesDriver(HttpClient httpClient)
     {
+        //_httpClient = HttpClientFactory.HttpClientOfAccountManagement();
         _httpClient = httpClient;
     }
 

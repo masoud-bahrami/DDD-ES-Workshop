@@ -8,8 +8,8 @@
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="7.0.14" />
-		<PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.2" />
-		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+		<PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.13" />
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -23,6 +23,7 @@
 	</ItemGroup>
 	<ItemGroup>
 		<ProjectReference Include="..\..\libraries\Zero.Dispatcher\Zero.Dispatcher.csproj" />
+		<ProjectReference Include="..\Account\API\Bank.Account.Api\Bank.AccountManagement.Api.csproj" />
 		<ProjectReference Include="..\Account\ApplicationServices\ApplicationServices\BankAccount.ApplicationServices.csproj" />
 		<ProjectReference Include="..\Account\Bootstrapper\BankAccounting.Account.Bootstrapper.csproj" />
 		<ProjectReference Include="..\Account\Domain\Domain.Services\BankAccount.Domain.Services.csproj" />

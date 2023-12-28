@@ -1,7 +1,3 @@
-
-using Bank.Account.API;
-using Microsoft.AspNetCore.Mvc.Testing;
-
 namespace BankAccount.AcceptanceTests.Drivers.AccountManager;
 
 public class BankAccountApiDriver : IBankAccountDriver
@@ -12,7 +8,9 @@ public class BankAccountApiDriver : IBankAccountDriver
 
     public BankAccountApiDriver(HttpClient httpClient)
     {
-        _httpClient = httpClient;
+        _httpClient = HttpClientFactory.HttpClientOfAccountManagement();
+
+        //_httpClient = httpClient;
     }
     public async Task OpenBank(string owner, decimal initialAmount)
     {

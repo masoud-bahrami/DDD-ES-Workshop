@@ -1,12 +1,11 @@
-﻿
-using Bank.Account.Domain.Contracts.Commands;
+﻿using Bank.Account.Domain.Contracts.Commands;
 using Bank.Account.Domain.Contracts.Events;
 using BankAccount.ApplicationServices.Query;
 using Microsoft.AspNetCore.Mvc;
 using Zero.Dispatcher.CommandPipeline;
 using Zero.Dispatcher.QueryPipeline;
 
-namespace Bank.Account.API.Controllers
+namespace Bank.AccountManagement.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

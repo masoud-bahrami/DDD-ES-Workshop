@@ -53,7 +53,6 @@ namespace BankAccounting.Account.Bootstrapper
            
             // register repositories
            serviceCollection.AddSingleton<IAccountRepository, AccountRepository>();
-           serviceCollection.AddTransient<IBankFeesServices, BankFeesServices>();
 
 
             // Acl

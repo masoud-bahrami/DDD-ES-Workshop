@@ -23,13 +23,14 @@ namespace BankAccount.AcceptanceTests
         [BeforeScenario(Order = 1)]
         public void FirstBeforeScenario()
         {
-            var application = new WebApplicationFactory<Program>()
+            var application = new WebApplicationFactory<CustomerManagement.Host.Startup>()
                 .WithWebHostBuilder(builder =>
                 {
                     builder.ConfigureServices(services =>
                     {
                     });
                 });
+
 
             _httpClient = application.CreateClient();
 

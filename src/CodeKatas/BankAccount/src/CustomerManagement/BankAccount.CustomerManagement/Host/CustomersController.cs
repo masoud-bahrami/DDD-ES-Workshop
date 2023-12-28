@@ -1,7 +1,7 @@
 ﻿using BankAccount.CustomerManagement.Services;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Bank.Account.API.Controllers;
+namespace BankAccount.CustomerManagement.Host;
 
 [Route("api/[controller]")]
 [ApiController]

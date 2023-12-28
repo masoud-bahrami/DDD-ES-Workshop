@@ -11,21 +11,24 @@ public interface IBankFeesAcl
 public class BankFeesAcl : IBankFeesAcl
 {
 
-    private readonly IBankFeesServices _bankFeesServices;
+    //private readonly IBankFeesServices _bankFeesServices;
 
-    public BankFeesAcl(IBankFeesServices bankFeesServices)
-    {
-        _bankFeesServices = bankFeesServices;
-    }
+    //public BankFeesAcl(IBankFeesServices bankFeesServices)
+    //{
+    //    _bankFeesServices = bankFeesServices;
+    //}
 
     public async Task<BankFeesViewModel> FetchFees()
     {
-        var bankFee = await _bankFeesServices.GetFees();
-
-        if (bankFee is null)
             return new BankFeesViewModel(0, 0);
 
+        //return
+        //    var bankFee = await _bankFeesServices.GetFees();
 
-        return new BankFeesViewModel(bankFee.SmsFees, bankFee.Charges);
+        //if (bankFee is null)
+        //    return new BankFeesViewModel(0, 0);
+
+
+        //return new BankFeesViewModel(bankFee.SmsFees, bankFee.Charges);
     }
 }

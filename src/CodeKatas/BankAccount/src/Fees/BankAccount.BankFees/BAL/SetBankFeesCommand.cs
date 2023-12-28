@@ -1,4 +1,4 @@
-namespace BankAccount.BankFees;
+namespace BankAccount.BankFees.BAL;
 
 public class SetBankFeesCommand
 {

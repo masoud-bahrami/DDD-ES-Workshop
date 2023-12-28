@@ -1,5 +1,4 @@
 using System.Text;
-using Bank.Account.API.Controllers;
 using BankAccount.CustomerManagement.Services;
 using Newtonsoft.Json;
 

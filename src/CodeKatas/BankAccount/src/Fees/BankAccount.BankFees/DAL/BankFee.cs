@@ -1,9 +1,9 @@
-﻿namespace BankAccount.BankFees;
+﻿namespace BankAccount.BankFees.DAL;
 
-public class BankFees
+public class BankFee
 {
-    private BankFees() { }
-    public BankFees(decimal smsFees, decimal charges)
+    private BankFee() { }
+    public BankFee(decimal smsFees, decimal charges)
     {
         SmsFees = smsFees;
         Charges = charges;

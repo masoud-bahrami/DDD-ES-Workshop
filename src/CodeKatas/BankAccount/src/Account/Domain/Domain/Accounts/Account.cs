@@ -69,7 +69,7 @@ public partial class Account : AggregateRoot<AccountId>
         Apply(BankChargesTransactionIsAppliedDomainEvent.New(Identity.Id,0M));
 
         var isADomainEvents = cmd.EventuateTo(Identity.Id);
-        Apply(isADomainEvents);
+        //Apply(isADomainEvents);
     }
     
     public static Account Reconstituute(AccountMemento memnto)
