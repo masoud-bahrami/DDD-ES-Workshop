@@ -1,7 +1,6 @@
 ﻿using BankAccount.CustomerManagement.DbContext;
 using BankAccount.CustomerManagement.Domain;
 using Microsoft.EntityFrameworkCore;
-using Quantum.Snowflake;
 
 namespace BankAccount.CustomerManagement.Services;
 
@@ -17,7 +16,8 @@ public class CustomerServices : ICustomerServices
 
     public async Task Register(RegisterCustomerCommand cmd)
     {
-        var customer = new Customer(SnowflakeIdGenerator.New().ToLong(), cmd, _customerIdDomainService);
+        var id = 1111;
+        var customer = new Customer(id, cmd, _customerIdDomainService);
         _dbContext.Customers.Add(customer);
         await _dbContext.SaveChangesAsync();
     }

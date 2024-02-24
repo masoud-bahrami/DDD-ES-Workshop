@@ -31,7 +31,9 @@ public class OpenBankAccountCommandHandler : IWantToHandleCommand<OpenBankAccoun
     [Retry(typeof(Exception))]
     public override async Task Handle(OpenBankAccountCommand command)
     {
-        var account = new Account(_accountIdGeneratorService.CreateNewAccountId(), 
+
+
+        var account = new Account(_accountIdGeneratorService.CreateNewAccountId(),
             command,
             _accountDomainService,
             await BankFeesDomainService());

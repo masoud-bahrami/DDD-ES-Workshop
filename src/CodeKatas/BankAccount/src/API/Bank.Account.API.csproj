@@ -22,6 +22,7 @@
 
 	</ItemGroup>
 	<ItemGroup>
+		<ProjectReference Include="..\..\Activity.Contracts\Activity.Contracts.csproj" />
 		<ProjectReference Include="..\..\libraries\Zero.Dispatcher\Zero.Dispatcher.csproj" />
 		<ProjectReference Include="..\Account\API\Bank.Account.Api\Bank.AccountManagement.Api.csproj" />
 		<ProjectReference Include="..\Account\ApplicationServices\ApplicationServices\BankAccount.ApplicationServices.csproj" />
@@ -33,6 +34,9 @@
 		<ProjectReference Include="..\Fees\BankAccount.BankFees\BankAccount.BankFees.csproj" />
 		<ProjectReference Include="..\Infrastructure\BankAccount.Infrastructure.csproj" />
 		<ProjectReference Include="..\Reporting\Query\BankAccount.ApplicationServices.Query.csproj" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Controllers\" />
 	</ItemGroup>
 
 </Project>
