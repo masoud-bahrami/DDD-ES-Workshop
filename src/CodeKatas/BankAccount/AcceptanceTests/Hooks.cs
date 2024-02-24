@@ -1,10 +1,9 @@
-﻿using Bank.Account.API;
-using BankAccount.AcceptanceTests.Drivers.AccountManager;
+﻿using BankAccount.AcceptanceTests.Drivers.AccountManager;
+using BankAccount.AcceptanceTests.Drivers.Activities;
 using BankAccount.AcceptanceTests.Drivers.BankFees;
 using BankAccount.AcceptanceTests.Drivers.CustomerRegistration;
 using BoDi;
 using Microsoft.AspNetCore.Mvc.Testing;
-using TechTalk.SpecFlow;
 
 namespace BankAccount.AcceptanceTests
 {
@@ -39,6 +38,7 @@ namespace BankAccount.AcceptanceTests
             _container.RegisterTypeAs<BankAccountApiDriver, IBankAccountDriver>();
             _container.RegisterTypeAs<BankFeesDriver, IBankFeesDriver>();
             _container.RegisterTypeAs<CustomerRegistrationApiDriver, ICustomerRegistrationDriver>();
+            _container.RegisterTypeAs<ActivityApiDriver, IActivityDriver>();
 
         }
 
