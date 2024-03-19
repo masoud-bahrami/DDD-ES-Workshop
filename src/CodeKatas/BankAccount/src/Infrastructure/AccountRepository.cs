@@ -1,7 +1,6 @@
 ﻿using BankAccount.Domain.Accounts;
 using BankAccount.Domain.Accounts.Memento;
 using BankAccount.Domain.Accounts.Repository;
-using Microsoft.EntityFrameworkCore;
 using Zero.DataBase;
 using Zero.Domain;
 
@@ -22,11 +21,11 @@ public class AccountRepository : IAccountRepository
         var accountMemento = await _context.Set<AccountMemento>()
             .FindAsync(id.Id);
 
-        var reconstituute = Account.Reconstituute(accountMemento);
+        var reconstitute = Account.Reconstitute(accountMemento);
         
-        return reconstituute;
+        return reconstitute;
         Queue<IsADomainEvent> events;
-        return Account.Reconstituute(events);
+        return Account.Reconstitute(events);
         // TODO 
         //await _context.SaveChangesAsync();
     }

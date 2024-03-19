@@ -36,7 +36,7 @@ public class OpenBankAccountCommandHandler : IWantToHandleCommand<OpenBankAccoun
             _accountDomainService,
             await BankFeesDomainService());
 
-        await _repository.Store(account);
+        //await _repository.Store(account);
 
         QueueDomainEvents(account.Identity, account.GetEvents());
 

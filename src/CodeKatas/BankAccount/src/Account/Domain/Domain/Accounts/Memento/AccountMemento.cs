@@ -2,7 +2,7 @@
 
 public class AccountMemento
 {
-    private AccountMemento()
+    public AccountMemento()
     {
         
     }
@@ -14,7 +14,7 @@ public class AccountMemento
     }
 
     public string Id { get; set; }
-    public Transactions Transactions { get; set; }
+    public Transactions Transactions { get; set; } = Transactions.Init();
 
     public Bank OpenedIn { get;set ; }
 

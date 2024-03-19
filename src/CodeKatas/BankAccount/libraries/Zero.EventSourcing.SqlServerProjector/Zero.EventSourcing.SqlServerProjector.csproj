@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<LangVersion>Latest</LangVersion>
+		<Authors>Masoud Bahrami</Authors>
+		<Company>BorhanSystem</Company>
+		<Version>0.0.26</Version>
+		<CodeAnalysisRuleSet>..\..\..\.sonarlint\hcm.payrolcsharp.ruleset</CodeAnalysisRuleSet>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<OutputPath>../../../localPackages/Quantum.EventSourcing.SqlServerProjector</OutputPath>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="Serilog.AspNetCore" Version="6.1.0" />
+	  <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+	    <PrivateAssets>all</PrivateAssets>
+	    <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+	  </PackageReference>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\..\Zero.EventSourcing\Zero.EventSourcing.csproj" />
+	  <ProjectReference Include="..\Zero.DataBase\Zero.DataBase.csproj" />
+	</ItemGroup>
+
+</Project>

@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore;
 using Zero.DataBase;
 using Zero.Dispatcher.Query;
 
-namespace BankAccount.ApplicationServices.Query;
+namespace BankAccount.Reporting.ApplicationServices;
 
-public class GetAccountBalanceQueryHandler : IWantToHandleQuery<GetAccountBalanceAmAQuery , decimal>
+public class GetAccountBalanceQueryHandler : IWantToHandleQuery<GetAccountBalanceQuery , decimal>
 {
     private readonly ZeroDbContext _bankAccountDbContext;
 
@@ -23,7 +23,7 @@ public class GetAccountBalanceQueryHandler : IWantToHandleQuery<GetAccountBalanc
         return account.Balance();
     }
 
-    public override async Task<decimal> FallBack(GetAccountBalanceAmAQuery query, Exception exception)
+    public override async Task<decimal> FallBack(GetAccountBalanceQuery query, Exception exception)
     {
         // TODO
         //if (exception is RecServiceUnaExce)

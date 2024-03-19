@@ -1,6 +1,6 @@
 ﻿using Bank.Account.Domain.Contracts.Commands;
 using Bank.Account.Domain.Contracts.Events;
-using BankAccount.ApplicationServices.Query;
+using BankAccount.Reporting.ApplicationServices;
 using Microsoft.AspNetCore.Mvc;
 using Zero.Dispatcher.CommandPipeline;
 using Zero.Dispatcher.QueryPipeline;
@@ -18,8 +18,6 @@ namespace Bank.AccountManagement.Api.Controllers
 
         public AccountsController(IAmACommandPipeline pipeline, IAmQueryHandlerStage queryHandlerStage)
         {
-            //_dispatcher = dispatcher;
-          //  _queryDispatcher = queryDispathcer;
             _pipeline = pipeline;
             _queryHandlerStage = queryHandlerStage;
         }
@@ -46,6 +44,6 @@ namespace Bank.AccountManagement.Api.Controllers
         [HttpGet("{owner}/Balance")]
         public async Task<IActionResult> Balance(string owner) 
             //=> Ok(await _queryDispatcher.RunQuery<GetAccountBalanceAmAQuery, decimal>(new GetAccountBalanceAmAQuery(owner)));
-            => Ok(await _queryHandlerStage.RuneQuery<GetAccountBalanceAmAQuery, decimal>(new GetAccountBalanceAmAQuery(owner)));
+            => Ok(await _queryHandlerStage.RuneQuery<GetAccountBalanceQuery, decimal>(new GetAccountBalanceQuery(owner)));
     }
 }

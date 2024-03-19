@@ -1,4 +1,4 @@
-﻿namespace BankAccount.ApplicationServices.Query;
+﻿namespace BankAccount.Reporting.ApplicationServices;
 
 public class AccountNotFoundException : Exception
 {

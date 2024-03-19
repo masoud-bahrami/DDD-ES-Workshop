@@ -32,7 +32,7 @@
 		<ProjectReference Include="..\Fees\BankAccount.BankFees.Bootstrapper\BankAccount.BankFees.Bootstrapper.csproj" />
 		<ProjectReference Include="..\Fees\BankAccount.BankFees\BankAccount.BankFees.csproj" />
 		<ProjectReference Include="..\Infrastructure\BankAccount.Infrastructure.csproj" />
-		<ProjectReference Include="..\Reporting\Query\BankAccount.ApplicationServices.Query.csproj" />
+		<ProjectReference Include="..\Reporting\Query\BankAccount.Reporting.ApplicationServices.csproj" />
 	</ItemGroup>
 
 </Project>

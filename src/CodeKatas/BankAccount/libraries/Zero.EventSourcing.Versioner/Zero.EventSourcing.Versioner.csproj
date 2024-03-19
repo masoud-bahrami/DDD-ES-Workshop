@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	  <TargetFramework>net7.0</TargetFramework>
+	  <LangVersion>Latest</LangVersion>
+	  <Authors>Masoud Bahrami</Authors>
+	  <Company>BorhanSystem</Company>
+	  <Version>0.0.3</Version>
+  </PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<OutputPath>../../../localPackages/Quantum.EventSourcing.Versioning</OutputPath>
+	</PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Zero.EventSourcing\Zero.EventSourcing.csproj" />
+  </ItemGroup>
+
+</Project>

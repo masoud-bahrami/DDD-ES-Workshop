@@ -12,9 +12,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\BankAccount.ApplicationServices.Reporting.DataAccess\BankAccount.Reporting.DataAccess.csproj" />
     <ProjectReference Include="..\..\..\libraries\Zero.Dispatcher\Zero.Dispatcher.csproj" />
+    <ProjectReference Include="..\..\..\libraries\Zero.EventSourcing.EventStoreDb\Zero.EventSourcing.EventStoreDb.csproj" />
+    <ProjectReference Include="..\..\..\libraries\Zero.InMemoryEventStore\Zero.EventSourcing.InMemoryEventStore.csproj" />
+    <ProjectReference Include="..\..\..\Zero.EventSourcing.DispatcherPipeline\Zero.EventSourcing.DispatcherPipeline.csproj" />
     <ProjectReference Include="..\..\Infrastructure\BankAccount.Infrastructure.csproj" />
-    <ProjectReference Include="..\..\Reporting\Query\BankAccount.ApplicationServices.Query.csproj" />
+    <ProjectReference Include="..\..\Reporting\Query\BankAccount.Reporting.ApplicationServices.csproj" />
     <ProjectReference Include="..\ApplicationServices\ApplicationServices\BankAccount.ApplicationServices.csproj" />
     <ProjectReference Include="..\Domain\Contracts\Bank.Account.Domain.Contracts.csproj" />
     <ProjectReference Include="..\Domain\Domain.Services\BankAccount.Domain.Services.csproj" />

@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\libraries\Zero.EventSourcing.SqlServerProjector\Zero.EventSourcing.SqlServerProjector.csproj" />
+    <ProjectReference Include="..\src\Account\Domain\Contracts\Bank.Account.Domain.Contracts.csproj" />
+    <ProjectReference Include="..\src\Account\Domain\Domain\BankAccount.Domain.csproj" />
+    <ProjectReference Include="..\Zero.EventSourcing\Zero.EventSourcing.csproj" />
+  </ItemGroup>
+
+</Project>

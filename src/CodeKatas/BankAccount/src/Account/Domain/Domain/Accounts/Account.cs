@@ -72,13 +72,13 @@ public partial class Account : AggregateRoot<AccountId>
         //Apply(isADomainEvents);
     }
     
-    public static Account Reconstituute(AccountMemento memnto)
+    public static Account Reconstitute(AccountMemento memento)
     {
         return new Account
         {
-            Identity = AccountId.New(memnto.Id),
-            Transactions = memnto.Transactions,
-            OpenedIn = new Bank(memnto.OpenedIn.Name, memnto.OpenedIn.Branch)
+            Identity = AccountId.New(memento.Id),
+            Transactions = memento.Transactions,
+            OpenedIn = new Bank(memento.OpenedIn.Name, memento.OpenedIn.Branch)
         };
     }
 
@@ -87,7 +87,7 @@ public partial class Account : AggregateRoot<AccountId>
 
     public AccountMemento TakeMemento() => new(base.Identity.Id, Transactions, OpenedIn);
 
-    public static Account Reconstituute(Queue<IsADomainEvent> events)
+    public static Account Reconstitute(Queue<IsADomainEvent> events)
     {
         throw new NotImplementedException();
     }
